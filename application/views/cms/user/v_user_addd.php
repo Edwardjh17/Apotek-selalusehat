@@ -4,11 +4,11 @@
       <div class="col-lg-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">From Add User</h3>
+                <h3 class="box-title">From Add Pegawai</h3>
 
                 <div class="box-tools pull-right">
-                  <?php echo button('load_silent("kelola/kelola_user/formadd/","#content")','Reload Page','btn btn-info','data-toggle="tooltip" title="Reload"');?> 
-                  <?php echo button('load_silent("kelola/kelola_user/","#content")','Kembali ke List User','btn btn-danger','data-toggle="tooltip" title="Kembali ke List User"');?> 
+                  <?php echo button('load_silent("data/pegawai/formadd/","#content")','Reload Page','btn btn-info','data-toggle="tooltip" title="Reload"');?> 
+                  <?php echo button('load_silent("data/pegawai/","#content")','Kembali ke List Pegawai','btn btn-danger','data-toggle="tooltip" title="Kembali ke List Pegawai"');?> 
                 </div>
             </div>
           <div class="box-body">
@@ -64,13 +64,6 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Status</label>
-                <div class="col-sm-8">
-                  <?php echo form_dropdown('bagian',$bagian,set_value('id'),'id="bagian" class="form-control select2"');?>
-                  <?php echo form_error('bagian', '<span class="error-span">', '</span>'); ?>
-                </div>
-            </div>
-            <div class="form-group">
                 <label class="col-sm-2 control-label" for="userfile">Picture</label>
                 <div class="col-sm-8">
                 <?php echo form_upload(array('name'=>'ufile','id'=>'ufile'));?>
@@ -82,6 +75,13 @@
                 <div class="col-sm-8">
                 <?php echo form_input(array('name'=>'no_hp','id'=>'no_hp','class'=>'form-control'));?>
                 <?php echo form_error('no_hp');?>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Alamat</label>
+                <div class="col-sm-8">
+                <?php echo form_input(array('name'=>'alamat','id'=>'alamat','class'=>'form-control'));?>
+                <?php echo form_error('alamat');?>
                 </div>
             </div>
             <div class="form-group">
@@ -121,7 +121,7 @@ function save()
     } else{
         $.ajaxFileUpload
           ({
-            url:site+'kelola/kelola_user/show_addForm',
+            url:site+'data/pegawai/show_addForm',
             secureuri:false,
             fileElementId:'ufile',
             dataType: 'json',
@@ -134,11 +134,12 @@ function save()
                 level       : $("#level").val(),
                 bagian       : $("#bagian").val(),
                 no_hp       : $("#no_hp").val(),
+                alamat       : $("#alamat").val(),
               },
             success: function (data)
             {
               $.growl.notice({ title: 'Berhasil', message: data['msg'] });
-              load_silent("kelola/kelola_user/","#content");
+              load_silent("data/pegawai/","#content");
             },
             error: function (data, e)
             {

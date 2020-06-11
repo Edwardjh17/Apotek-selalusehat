@@ -59,6 +59,13 @@
                 </div>
             </div>
             <div class="form-group">
+                <label class="col-sm-2 control-label">Alamat</label>
+                <div class="col-sm-8">
+                <?php echo form_input(array('name'=>'alamat','id'=>'alamat','value'=>$row->alamat,'class'=>'form-control'));?>
+                <?php echo form_error('alamat');?>
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="col-sm-2 control-label">Simpan</label>
                 <div class="col-sm-8 tutup">
                 <?php
@@ -91,7 +98,7 @@ function save()
     if (path == '') {
         $.ajax({
         type: "POST",
-        url: "<?= site_url('kelola/kelola_user/show_editForm_user/"+ida+"')?>",
+        url: "<?= site_url('data/pegawai/show_editForm_user/"+ida+"')?>",
         dataType:'json',
         data: {
             id        : $("#id").val(),
@@ -101,6 +108,7 @@ function save()
             jenis_kelamin    : $("#jenis_kelamin").val(),
             password    : $("#password").val(),
             no_hp       : $("#no_hp").val(),
+            alamat       : $("#alamat").val(),
           
         },
         success   : function(data)
@@ -113,7 +121,7 @@ function save()
     } else{
         $.ajaxFileUpload
           ({
-            url: "<?= site_url('kelola/kelola_user/show_editForm_file_user/"+ida+"')?>",
+            url: "<?= site_url('data/pegawai/show_editForm_file_user/"+ida+"')?>",
             secureuri:false,
             fileElementId:'ufile',
             dataType: 'json',
@@ -125,6 +133,7 @@ function save()
                 jenis_kelamin    : $("#jenis_kelamin").val(),
                 password    : $("#password").val(),
                 no_hp       : $("#no_hp").val(),
+                alamat       : $("#alamat").val(),
               },
             success: function (data)
             {

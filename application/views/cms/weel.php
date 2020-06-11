@@ -67,6 +67,9 @@
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
           <div class="navbar-custom-menu" >
             <ul class="nav navbar-nav">
               <li class="dropdown tasks-menu">
@@ -97,7 +100,7 @@
             </div>
           </div>
           <ul class="sidebar-menu">
-            <li class="header" style="background:#E8E8E8;"><b>Menu Utama</b></li>
+            <li class="header" style="background:#E8E8E8;"><b>MENU UTAMA</b></li>
             <li class="active treeview">
               
              

@@ -4,10 +4,10 @@
       <div class="col-lg-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Data User Laboratorium Siladu</h3>
+            <h3 class="box-title">Data Pegawai Apotek Selalu Sehat</h3>
 
             <div class="box-tools pull-right">
-              <?php echo button('load_silent("kelola/kelola_user/show_addForm/","#content")','Add New User','btn btn-success','data-toggle="tooltip" title="Add New User"');?> 
+              <?php echo button('load_silent("data/pegawai/show_addForm/","#content")','Tambah Pegawai','btn btn-success','data-toggle="tooltip" title="Tambah Pegawai"');?> 
             </div>
           </div>
 
@@ -22,7 +22,7 @@
                 <th>Email</th>
                 <th>Level</th>
                 <th>No HP</th>
-                <th>Status</th>
+                <th>Alamat</th>
                 <th>Act</th>
               </thead>
               <tbody>
@@ -40,10 +40,10 @@
             <td align="center"><?=$row->email?></td>
             <td align="center"><?=$row->level?></td>
             <td align="center"><?=$row->no_hp?></td>
-            <td align="center"><?=$row->bagian?></td>
+            <td align="center"><?=$row->alamat?></td>
             <td align="center">
-            <?php echo button('load_silent("kelola/kelola_user/show_editForm/'.$row->id.'","#content")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');?>
-            <?php echo button('load_silent("kelola/kelola_user/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?>  
+            <?php echo button('load_silent("data/pegawai/show_editForm/'.$row->id.'","#content")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');?>
+            <?php echo button('load_silent("data/pegawai/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?>  
 						</td>
 					</tr>
 

@@ -6,10 +6,10 @@
       <div class="col-lg-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">From Edit User</h3>
+                <h3 class="box-title">From Edit Pegawai</h3>
                 <?php if (from_session('level')<=2) {?>
                 <div class="box-tools pull-right">
-                  <?php echo button('load_silent("kelola/kelola_user/","#content")','Kembali ke List User','btn btn-danger','data-toggle="tooltip" title="Kembali ke List User"');?> 
+                  <?php echo button('load_silent("data/pegawai/","#content")','Kembali ke List Pegawai','btn btn-danger','data-toggle="tooltip" title="Kembali ke List Pegawai"');?> 
                 </div>
                 <?php }?>
             </div>
@@ -46,13 +46,6 @@
                   <?php echo form_error('jenis_kelamin', '<span class="error-span">', '</span>'); ?>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-8">
-                <?php echo form_password(array('name'=>'password','id'=>'password','class'=>'form-control'));?>
-                <?php echo form_error('password');?>
-                </div>
-            </div>
             <?php if (from_session('level')<=2) {?>
 
             <div class="form-group">
@@ -78,10 +71,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Status</label>
+                <label class="col-sm-2 control-label">Alamat</label>
                 <div class="col-sm-8">
-                  <?php echo form_dropdown('bagian',$bagian,$row->bagian,'id="bagian" class="form-control select2"');?>
-                  <?php echo form_error('bagian', '<span class="error-span">', '</span>'); ?>
+                <?php echo form_input(array('name'=>'alamat','id'=>'alamat','value'=>$row->alamat,'class'=>'form-control'));?>
+                <?php echo form_error('alamat');?>
                 </div>
             </div>
             <div class="form-group">
@@ -118,7 +111,7 @@ function save()
     if (path == '') {
         $.ajax({
         type: "POST",
-        url: "<?= site_url('kelola/kelola_user/show_editForm/"+ida+"')?>",
+        url: "<?= site_url('data/pegawai/show_editForm/"+ida+"')?>",
         dataType:'json',
         data: {
             id        : $("#id").val(),
@@ -128,21 +121,21 @@ function save()
             jenis_kelamin    : $("#jenis_kelamin").val(),
             password    : $("#password").val(),
             level       : $("#level").val(),
-            bagian       : $("#bagian").val(),
+            alamat       : $("#alamat").val(),
             no_hp       : $("#no_hp").val(),
           
         },
         success   : function(data)
         {
           $.growl.notice({ title: 'Sukses', message: data['msg']});      
-          load_silent("kelola/kelola_user/","#content");
+          load_silent("data/pegawai/","#content");
         }
       });
 
     } else{
         $.ajaxFileUpload
           ({
-            url: "<?= site_url('kelola/kelola_user/show_editForm_file/"+ida+"')?>",
+            url: "<?= site_url('data/pegawai/show_editForm_file/"+ida+"')?>",
             secureuri:false,
             fileElementId:'ufile',
             dataType: 'json',
@@ -154,13 +147,13 @@ function save()
                 jenis_kelamin    : $("#jenis_kelamin").val(),
                 password    : $("#password").val(),
                 level       : $("#level").val(),
-                bagian       : $("#bagian").val(),
+                alamat       : $("#alamat").val(),
                 no_hp       : $("#no_hp").val(),
               },
             success: function (data)
             {
               $.growl.notice({ title: 'Berhasil', message: data['msg'] });
-              load_silent("kelola/kelola_user/","#content");
+              load_silent("data/pegawai/","#content");
             },
             error: function (data, e)
             {

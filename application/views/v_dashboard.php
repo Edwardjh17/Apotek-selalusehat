@@ -19,8 +19,8 @@
                   $avatar = parse_avatar(from_session('gambar'),from_session('nama'),40,'img-circle');
                 ?>
                 <?php echo $avatar; ?>
-                    <h5 class="description-header">SELAMAT DATANG DI <?php echo $this->config->item('project')?></h5>
-                    <span class="description-text"><?php echo button('load_silent("kelola/kelola_user/show_editForm_user/'.from_session('id').'","#content")','Update Profil','btn bg-green','data-toggle="tooltip" title="Update Profil"');?> 
+                    <h5 class="description-header">Selamat Datang Di <?php echo $this->config->item('project')?></h5>
+                    <span class="description-text"><?php echo button('load_silent("data/pegawai/show_editForm_user/'.from_session('id').'","#content")','Update Profil','btn bg-green','data-toggle="tooltip" title="Update Profil"');?> 
 						</span>
                   </div>
                   <!-- /.description-block -->
