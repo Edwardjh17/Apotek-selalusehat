@@ -6,8 +6,7 @@ class M_user extends CI_Model {
 	public function getList($value='')
 	{
 		$this->db->join('master_level ml', 'cu.level = ml.id', 'left');
-		$this->db->select('cu.*,ml.level, mbn.bagian, jk.jenis_kelamin');
-		$this->db->join('master_bagian mbn', 'cu.bagian = mbn.id');
+		$this->db->select('cu.*,ml.level, jk.jenis_kelamin');
 		$this->db->join('jenis_kelamin jk', 'cu.jenis_kelamin = jk.id', 'left');
 		
 		

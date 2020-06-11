@@ -7,7 +7,14 @@
             <h3 class="box-title">Data Pegawai Apotek Selalu Sehat</h3>
 
             <div class="box-tools pull-right">
-              <?php echo button('load_silent("data/pegawai/show_addForm/","#content")','Tambah Pegawai','btn btn-success','data-toggle="tooltip" title="Tambah Pegawai"');?> 
+            <?php
+              $sesi = from_session('level');
+              if ($sesi == '1' || $sesi == '3' ) {
+                echo button('load_silent("data/pegawai/show_addForm/","#content")','Tambah Pegawai','btn btn-success','data-toggle="tooltip" title="Tambah Pegawai"');
+              } else {
+                # code...
+              }
+              ?>
             </div>
           </div>
 
@@ -23,7 +30,7 @@
                 <th>Level</th>
                 <th>No HP</th>
                 <th>Alamat</th>
-                <th>Act</th>
+                <th></th>
               </thead>
               <tbody>
           <?php 
@@ -42,8 +49,22 @@
             <td align="center"><?=$row->no_hp?></td>
             <td align="center"><?=$row->alamat?></td>
             <td align="center">
-            <?php echo button('load_silent("data/pegawai/show_editForm/'.$row->id.'","#content")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');?>
-            <?php echo button('load_silent("data/pegawai/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');?>  
+            <?php
+              $sesi = from_session('level');
+              if ($sesi == '1' || $sesi == '3' ) {
+                echo button('load_silent("data/pegawai/show_editForm/'.$row->id.'","#content")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
+              } else {
+                # code...
+              }
+              ?>
+              <?php
+              $sesi = from_session('level');
+              if ($sesi == '1' || $sesi == '3' ) {
+                echo button('load_silent("data/pegawai/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
+              } else {
+                # code...
+              }
+              ?>
 						</td>
 					</tr>
 

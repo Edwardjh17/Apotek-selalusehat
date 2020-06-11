@@ -14,14 +14,13 @@ class Pegawai extends CI_Controller {
 	{
 		$this->fungsi->check_previleges('pegawai');
 		$data['user'] = $this->m_user->getList();
-		//$data['bagian'] = get_options($this->db->query('select id, bagian from master_bagian'),true);
 		$this->load->view('cms/user/v_user_list',$data);
 	}
 
 
 	public function formadd($value='')
 	{
-		$this->fungsi->check_previleges('pegawai');
+		$this->fungsi->check_previleges('kelola_user');
 		$data['level']  = get_options($this->db->query('select id, level from master_level'),true);
         $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
 		$this->load->view('cms/user/v_user_addd',$data);
@@ -36,11 +35,6 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'nama',
 					'label' => 'Kode Komponen',
 					'rules' => 'required'
-                ),
-                array(
-					'field'	=> 'email',
-					'label' => 'Kode Komponen',
-					'rules' => 'required'
 				),
 				array(
 					'field'	=> 'username',
@@ -48,10 +42,15 @@ class Pegawai extends CI_Controller {
 					'rules' => 'trim|required'
                 ),
                 array(
-					'field'	=> 'jenis_kelamin',
-					'label' => 'Kode Komponen',
-					'rules' => 'trim|required'
+                    'field'	=> 'jenis_kelamin',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
                 ),
+                array(
+					'field'	=> 'email',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
+				),
 				array(
 					'field'	=> 'password',
 					'label' => 'Nama Komponen',
@@ -71,7 +70,7 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'alamat',
 					'label' => 'Uraian Komponen',
 					'rules' => ''
-				),
+				)
 			);
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
@@ -123,19 +122,20 @@ class Pegawai extends CI_Controller {
 		      {
 		      	$pass_en  = $this->db->query("SELECT PASSWORD('".$this->input->post('password')."') as pass")->row()->pass;
 		      	$datapost = array(
-                'nama'     => $this->input->post('nama'),
-                'email'     => $this->input->post('email'),  
+				'nama'     => $this->input->post('nama'), 
                 'username' => $this->input->post('username'),
-                'jenis_kelamin' => $this->input->post('jenis_kelamin'), 
+                'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+                'email'   => $this->input->post('email'),
 				'password' => $pass_en, 
 				'level'    => $this->input->post('level'), 
 				'alamat'   => $this->input->post('alamat'), 
 				'gambar'   => substr($upload_folder,2).$data['file_name'], 
 				'no_hp'    => $this->input->post('no_hp'), 
+				 
 				);
 		        $this->m_user->insertData($datapost);
 				$this->fungsi->catat($datapost,"Menambah Master user dengan data sbb:",true);
-				$data['msg'] = "Data Pegawai Baru Berhasil Disimpan....";
+				$data['msg'] = "Data Pegawai Baru Disimpan....";
 				echo json_encode($data);
 				
 		      }
@@ -158,11 +158,6 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'nama',
 					'label' => 'Kode Komponen',
 					'rules' => 'required'
-                ),
-                array(
-					'field'	=> 'email',
-					'label' => 'Kode Komponen',
-					'rules' => ''
 				),
 				array(
 					'field'	=> 'username',
@@ -171,8 +166,13 @@ class Pegawai extends CI_Controller {
                 ),
                 array(
 					'field'	=> 'jenis_kelamin',
-					'label' => 'Kode Komponen',
-					'rules' => 'trim|required'
+					'label' => 'Uraian Komponen',
+                    'rules' => ''
+                ),
+                array(
+					'field'	=> 'email',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'password',
@@ -188,12 +188,14 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'level',
 					'label' => 'Uraian Komponen',
 					'rules' => ''
-				),
-				array(
+                ),
+                array(
 					'field'	=> 'alamat',
 					'label' => 'Uraian Komponen',
 					'rules' => ''
-				),
+				)
+				
+				
 			);
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
@@ -210,33 +212,34 @@ class Pegawai extends CI_Controller {
 			if ($this->input->post('password')=='') {
 				$datapost = array(
 				'id'       => $this->input->post('id'), 
-                'nama'     => $this->input->post('nama'), 
-                'email'     => $this->input->post('email'), 
-                'username' => $this->input->post('username'), 
-                'jenis_kelamin' => $this->input->post('jenis_kelamin'), 
+				'nama'     => $this->input->post('nama'),
+				'email'    => $this->input->post('email'), 
+				'username' => $this->input->post('username'), 
 				'level'    => $this->input->post('level'),
 				'alamat'   => $this->input->post('alamat'),
-				'no_hp'    => $this->input->post('no_hp'), 
+                'no_hp'    => $this->input->post('no_hp'),
+                'jenis_kelamin'    => $this->input->post('jenis_kelamin'),
+                
 				);
 			} else {
 				$pass_en  = $this->db->query("SELECT PASSWORD('".$this->input->post('password')."') as pass")->row()->pass;
 				$datapost = array(
 				'id'       => $this->input->post('id'),
-                'nama'     => $this->input->post('nama'), 
-                'email'     => $this->input->post('email'), 
-                'username' => $this->input->post('username'),
-                'jenis_kelamin' => $this->input->post('jenis_kelamin'),  
+				'nama'     => $this->input->post('nama'), 
+				'username' => $this->input->post('username'), 
 				'password' => $pass_en, 
 				'level'    => $this->input->post('level'), 
 				'alamat'   => $this->input->post('alamat'), 
 				'no_hp'    => $this->input->post('no_hp'), 
+				'jenis_kelamin'    => $this->input->post('jenis_kelamin'),
+                'email'    => $this->input->post('email'),
 				);
 			}
 			
 		      	
 			$this->m_user->insertData($datapost,false);
 			$this->fungsi->catat($datapost,"Mengubah user dengan data sbb:",true);
-			$data['msg'] = "Data Pegawai Berhasil Diperbarui....";
+			$data['msg'] = "Data Pegawai Diperbarui....";
 			echo json_encode($data);
 		}
 	}
@@ -255,11 +258,6 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'nama',
 					'label' => 'Kode Komponen',
 					'rules' => 'required'
-                ),
-                array(
-					'field'	=> 'email',
-					'label' => 'Kode Komponen',
-					'rules' => ''
 				),
 				array(
 					'field'	=> 'username',
@@ -267,9 +265,14 @@ class Pegawai extends CI_Controller {
 					'rules' => 'trim|required'
                 ),
                 array(
-					'field'	=> 'jensi_kelamin',
-					'label' => 'Kode Komponen',
-					'rules' => 'trim|required'
+					'field'	=> 'jenis_kelamin',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
+                ),
+                array(
+					'field'	=> 'email',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'password',
@@ -290,7 +293,7 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'alamat',
 					'label' => 'Uraian Komponen',
 					'rules' => ''
-				),
+				)
 			);
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
@@ -343,10 +346,10 @@ class Pegawai extends CI_Controller {
 		      	if ($this->input->post('password')=='') {
 					$datapost = array(
 					'id'       => $this->input->post('id'),
-                    'nama'     => $this->input->post('nama'),
-                    'email'     => $this->input->post('email'),
-                    'username' => $this->input->post('username'), 
-                    'jenis_kelamin' => $this->input->post('jenis_kelamin'), 
+					'nama'     => $this->input->post('nama'), 
+                    'username' => $this->input->post('username'),
+                    'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+                    'email'    => $this->input->post('email'),
 					'level'    => $this->input->post('level'), 
 					'alamat'   => $this->input->post('alamat'), 
 					'gambar'   => substr($upload_folder,2).$data['file_name'], 
@@ -356,10 +359,10 @@ class Pegawai extends CI_Controller {
 					$pass_en  = $this->db->query("SELECT PASSWORD('".$this->input->post('password')."') as pass")->row()->pass;
 					$datapost = array(
 					'id'       => $this->input->post('id'),
-                    'nama'     => $this->input->post('nama'),
-                    'email'     => $this->input->post('email'), 
+					'nama'     => $this->input->post('nama'), 
                     'username' => $this->input->post('username'),
-                    'jenis_kelamin' => $this->input->post('jenis_kelamin'),  
+                    'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+                    'email'    => $this->input->post('email'),
 					'password' => $pass_en, 
 					'level'    => $this->input->post('level'), 
 					'alamat'   => $this->input->post('alamat'), 
@@ -369,7 +372,7 @@ class Pegawai extends CI_Controller {
 				}
 				$this->m_user->insertData($datapost,false);
 				$this->fungsi->catat($datapost,"Mengubah user dengan data sbb:",true);
-				$data['msg'] = "Data Pegawai Berhasil Diperbarui.....";
+				$data['msg'] = "Data Pegawai Diperbarui.....";
 				echo json_encode($data);
 				
 		      }
@@ -391,21 +394,26 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'nama',
 					'label' => 'Kode Komponen',
 					'rules' => 'required'
-                ),
-                array(
+				),
+				array(
 					'field'	=> 'email',
-					'label' => 'Kode Komponen',
-					'rules' => 'required'
+					'label' => 'Uraian Komponen',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'username',
 					'label' => 'Kode Komponen',
 					'rules' => 'required'
-                ),
-                array(
+				),
+				array(
 					'field'	=> 'jenis_kelamin',
-					'label' => 'Kode Komponen',
-					'rules' => 'required'
+					'label' => 'Uraian Komponen',
+					'rules' => ''
+				),
+				array(
+					'field'	=> 'password',
+					'label' => 'Nama Komponen',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'no_hp',
@@ -416,7 +424,7 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'alamat',
 					'label' => 'Nama Komponen',
 					'rules' => ''
-				),
+				)
 			);
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
@@ -424,8 +432,8 @@ class Pegawai extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
-            $data['level']=get_options($this->db->query('select id, level from master_level where id !=1'),true);
-            $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
+			$data['level']=get_options($this->db->query('select id, level from master_level where id !=1'),true);
+			$data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
 			$this->load->view('cms/user/v_user_edit_user',$data);
 		}
 		else
@@ -433,24 +441,24 @@ class Pegawai extends CI_Controller {
 			if ($this->input->post('password')=='') {
 				$datapost = array(
 				'id'     => $this->input->post('id'), 
-                'nama'     => $this->input->post('nama'),
-                'email'     => $this->input->post('email'),  
-                'username' => $this->input->post('username'),
-                'jenis_kelamin' => $this->input->post('jenis_kelamin'),   
+				'nama'     => $this->input->post('nama'),
+				'email'     => $this->input->post('email'), 
+				'username' => $this->input->post('username'),
+				'jenis_kelamin'     => $this->input->post('jenis_kelamin'), 
 				'no_hp'    => $this->input->post('no_hp'), 
-				'alamat'    => $this->input->post('alamat'), 
+				'alamat'    => $this->input->post('alamat'),
 				);
 			} else {
 				$pass_en  = $this->db->query("SELECT PASSWORD('".$this->input->post('password')."') as pass")->row()->pass;
 				$datapost = array(
 				'id'     => $this->input->post('id'),
-                'nama'     => $this->input->post('nama'),
-                'email'     => $this->input->post('email'),  
-                'username' => $this->input->post('username'),
-                'jenis_kelamin' => $this->input->post('jenis_kelamin'),   
+				'nama'     => $this->input->post('nama'),
+				'email'     => $this->input->post('email'),  
+				'username' => $this->input->post('username'), 
+				'jenis_kelamin'     => $this->input->post('jenis_kelamin'),
 				'password' => $pass_en, 
 				'no_hp'    => $this->input->post('no_hp'),
-				'alamat'    => $this->input->post('alamat'),  
+				'alamat'    => $this->input->post('alamat'), 
 				);
 			}
 			
@@ -475,21 +483,21 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'nama',
 					'label' => 'Kode Komponen',
 					'rules' => 'required'
-                ),
-                array(
+				),
+				array(
 					'field'	=> 'email',
-					'label' => 'Kode Komponen',
-					'rules' => 'required'
+					'label' => 'Uraian Komponen',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'username',
 					'label' => 'Kode Komponen',
 					'rules' => 'trim|required'
-                ),
-                array(
-					'field'	=> 'jensi_kelamin',
-					'label' => 'Kode Komponen',
-					'rules' => 'trim|required'
+				),
+				array(
+					'field'	=> 'jenis_kelamin',
+					'label' => 'Uraian Komponen',
+					'rules' => ''
 				),
 				array(
 					'field'	=> 'password',
@@ -505,7 +513,7 @@ class Pegawai extends CI_Controller {
 					'field'	=> 'alamat',
 					'label' => 'Nama Komponen',
 					'rules' => ''
-				),
+				)
 			);
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="error-span">', '</span>');
@@ -513,8 +521,8 @@ class Pegawai extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['edit'] = $this->db->get_where('cms_user',array('id'=>$id));
-            $data['level']=get_options($this->db->query('select id, level from master_level'),true);
-            $data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
+			$data['level']=get_options($this->db->query('select id, level from master_level'),true);
+			$data['jenis_kelamin'] = get_options($this->db->query('select id, jenis_kelamin from jenis_kelamin'),true);
 			$this->load->view('cms/user/v_user_edit_user',$data);
 		}
 		else
@@ -558,26 +566,26 @@ class Pegawai extends CI_Controller {
 		      	if ($this->input->post('password')=='') {
 					$datapost = array(
 					'id'     => $this->input->post('id'),
-                    'nama'     => $this->input->post('nama'), 
-                    'email'     => $this->input->post('email'), 
-                    'username' => $this->input->post('username'),
-                    'jenis_kelamin' => $this->input->post('jenis_kelamin'),   
+					'nama'     => $this->input->post('nama'),
+					'email'     => $this->input->post('email'),  
+					'username' => $this->input->post('username'),
+					'jenis_kelamin'     => $this->input->post('jenis_kelamin'),  
 					'gambar'   => substr($upload_folder,2).$data['file_name'], 
-					'no_hp'    => $this->input->post('no_hp'), 
+					'no_hp'    => $this->input->post('no_hp'),
 					'alamat'    => $this->input->post('alamat'), 
 					);
 				} else {
 					$pass_en  = $this->db->query("SELECT PASSWORD('".$this->input->post('password')."') as pass")->row()->pass;
 					$datapost = array(
 					'id'     => $this->input->post('id'),
-                    'nama'     => $this->input->post('nama'),
-                    'email'     => $this->input->post('email'),  
-                    'username' => $this->input->post('username'),
-                    'jenis_kelamin' => $this->input->post('jenis_kelamin'),   
+					'nama'     => $this->input->post('nama'),
+					'email'     => $this->input->post('email'),   
+					'username' => $this->input->post('username'), 
+					'jenis_kelamin'     => $this->input->post('jenis_kelamin'), 
 					'password' => $pass_en, 
 					'gambar'   => substr($upload_folder,2).$data['file_name'],  
-					'no_hp'    => $this->input->post('no_hp'),
-					'alamat'    => $this->input->post('alamat'),  
+					'no_hp'    => $this->input->post('no_hp'), 
+					'alamat'   => $this->input->post('alamat'), 
 					);
 				}
 				$this->m_user->insertData($datapost,false);
@@ -597,11 +605,8 @@ class Pegawai extends CI_Controller {
 		if($id == '' || !is_numeric($id)) die;
 		$this->m_user->deleteData($id);
 		$this->fungsi->run_js('load_silent("data/pegawai","#content")');
-		$this->fungsi->message_box("Data Pegawai berhasil dihapus...","notice");
+		$this->fungsi->message_box("Data pegawai berhasil dihapus...","notice");
 		$this->fungsi->catat("Menghapus laporan dengan id ".$id);
 	}
 
 }
-
-/* End of file user.php */
-/* Location: ./application/controllers/cms/user.php */

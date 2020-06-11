@@ -46,6 +46,13 @@
                   <?php echo form_error('jenis_kelamin', '<span class="error-span">', '</span>'); ?>
                 </div>
             </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-8">
+                <?php echo form_password(array('name'=>'password','id'=>'password','class'=>'form-control'));?>
+                <?php echo form_error('password');?>
+                </div>
+            </div>
             <?php if (from_session('level')<=2) {?>
 
             <div class="form-group">
@@ -142,7 +149,7 @@ function save()
             data: {
                 id       : $("#id").val(),
                 nama        : $("#nama").val(),
-                nama        : $("#nama").val(),
+                email        : $("#email").val(),
                 username    : $("#username").val(),
                 jenis_kelamin    : $("#jenis_kelamin").val(),
                 password    : $("#password").val(),
