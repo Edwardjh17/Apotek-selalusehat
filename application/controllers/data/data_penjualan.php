@@ -68,7 +68,7 @@ class data_penjualan extends CI_Controller {
 		$config = array(
 				array(
 					'field'	=> 'id',
-					'label' => '',
+					'label' => 'id',
 					'rules' => ''
 				),
 				array(
@@ -88,7 +88,7 @@ class data_penjualan extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('tanggal_transaksi','no_referensi','nama_pembeli','banyak','total_penjualan'));
+			$datapost = get_post_data(array('id','tanggal_transaksi','no_referensi','nama_pembeli','banyak','total_penjualan'));
 			$this->m_data_penjualan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("data/data_penjualan","#content")');
 			$this->fungsi->message_box("Data Penjualan sukses diperbarui...","success");

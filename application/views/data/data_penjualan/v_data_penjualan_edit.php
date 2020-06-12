@@ -10,7 +10,7 @@
             <label class="col-sm-4 control-label">Tanggal Transaksi</label>
             <div class="col-sm-8">
             <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'tanggal_transaksi','value'=>$row->tanggal_transaksi,'class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tanggal_transaksi','value'=>$row->tanggal_transaksi,'type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tanggal_transaksi');?>
             </div>
             </div>
