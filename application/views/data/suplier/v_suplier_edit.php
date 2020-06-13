@@ -13,28 +13,28 @@
             <?php echo form_input(array('name'=>'id','value'=>$row->id,'class'=>'form-control'));?>
             <?php echo form_error('id');?>
             </div>
-        </div>
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Suplier</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'nama_suplier','value'=>$row->nama_suplier,'class'=>'form-control'));?>
             <?php echo form_error('nama_suplier');?>
             </div>
-        </div>>
+        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">No Telephone</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'no_telephone','value'=>$row->no_telephone,'class'=>'form-control'));?>
             <?php echo form_error('no_telephone');?>
             </div>
-        </div>>
+        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Alamat</label>
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'alamat','value'=>$row->alamat,'class'=>'form-control'));?>
             <?php echo form_error('alamat');?>
             </div>
-        </div>>
+        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Simpan</label>
             <div class="col-sm-8 tutup">

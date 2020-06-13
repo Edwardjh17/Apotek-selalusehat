@@ -8,6 +8,8 @@ class stock_obat extends CI_Controller {
 		parent::__construct();
 		$this->fungsi->restrict();
 		$this->load->model('data/m_stock_obat');
+		$this->load->model('data/m_suplier');
+		$this->load->model('data/m_jenis_obat');
 	}
 
 	public function index()
@@ -46,12 +48,13 @@ class stock_obat extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$data['status']='';
+			$data['suplier'] = $this->m_suplier->getData();
+			$data['jenis_obat'] = $this->m_jenis_obat->getData();
 			$this->load->view('data/stock_obat/v_stock_obat_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_obat','kode_obat','tanggal_masuk','tanggal_kadaluarsa','jumlah_stock'));
+			$datapost = get_post_data(array('id','nama_obat','kode_obat','jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual','suplier'));
 			$this->m_stock_obat->insertData($datapost);
 			$this->fungsi->run_js('load_silent("data/stock_obat","#content")');
 			$this->fungsi->message_box("Data Stock Obat sukses disimpan...","success");
@@ -85,7 +88,7 @@ class stock_obat extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_obat','kode_obat','tanggal_masuk','tanggal_kadaluarsa','jumlah_stock'));
+			$datapost = get_post_data(array('id','nama_obat','kode_obat','jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual','suplier'));
 			$this->m_stock_obat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("data/stock_obat","#content")');
 			$this->fungsi->message_box("Data Stock Obat sukses disimpan...","success");

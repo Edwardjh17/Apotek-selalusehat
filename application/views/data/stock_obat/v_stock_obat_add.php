@@ -21,18 +21,24 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Masuk</label>
+            <label class="col-sm-4 control-label">Jenis Obat</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_masuk','type'=>'date','class'=>'form-control'));?>
-            <?php echo form_error('tanggal_masuk');?>
+            <div class="form-gorup">
+                <select class="form-control" name="jenis_obat">
+                <?php foreach ($jenis_obat->result() as $jenis_obat): ?>
+                    <option value="<?= $jenis_obat->id ?>"><?= $jenis_obat->jenis_obat ?></option>
+                <?php endforeach; ?>
+                </select>
+                </div>
+            <?php echo form_error('jenis_obat');?>
             <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Kadaluarsa</label>
+            <label class="col-sm-4 control-label">Tanggal Kadaluwarsa</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_kadaluarsa','type'=>'date','class'=>'form-control'));?>
-            <?php echo form_error('tanggal_kadaluarsa');?>
+            <?php echo form_input(array('name'=>'tanggal_kadaluwarsa','type'=>'date','class'=>'form-control'));?>
+            <?php echo form_error('tanggal_kadaluwarsa');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -41,6 +47,36 @@
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'jumlah_stock','class'=>'form-control'));?>
             <?php echo form_error('jumlah_stock');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Harga Beli</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'harga_beli','class'=>'form-control'));?>
+            <?php echo form_error('harga_beli');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Harga Jual</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'harga_jual','class'=>'form-control'));?>
+            <?php echo form_error('harga_jual');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Suplier</label>
+            <div class="col-sm-8">
+            <div class="form-gorup">
+                <select class="form-control" name="suplier">
+                <?php foreach ($suplier->result() as $suplier): ?>
+                    <option value="<?= $suplier->id ?>"><?= $suplier->nama_suplier ?></option>
+                <?php endforeach; ?>
+                </select>
+                </div>
+            <?php echo form_error('suplier');?>
             <span id="check_data"></span>
             </div>
         </div>
