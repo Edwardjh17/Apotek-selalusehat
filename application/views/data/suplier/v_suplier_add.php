@@ -4,7 +4,14 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         
-
+    <div class="form-group">
+            <label class="col-sm-4 control-label">Id</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'id','class'=>'form-control'));?>
+            <?php echo form_error('id');?>
+            <span id="check_data"></span>
+            </div>
+        </div>
 
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Suplier</label>
@@ -32,7 +39,7 @@
         </div>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Simpan</label>
+            <label class="col-sm-4 control-label">Save</label>
             <div class="col-sm-8 tutup">
             <?php
             echo button('send_form(document.faddmenugrup,"data/suplier/show_addForm/","#divsubcontent")','Save','btn btn-success')." ";

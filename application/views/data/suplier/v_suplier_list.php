@@ -21,6 +21,7 @@
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
                 <th>No</th>
+                <th>Id</th>
                 <th>Nama Suplier</th>
                 <th>No Telephone</th>
                 <th>Alamat</th>
@@ -31,6 +32,7 @@
     foreach($suplier->result() as $row): ?>
     <tr>
       <td align="center"><?=$i++?></td>
+      <td align="center"><?=$row->id?></td>
       <td align="center"><?=$row->nama_suplier?></td>
       <td align="center"><?=$row->no_telephone?></td>
       <td align="center"><?=$row->alamat?></td>
