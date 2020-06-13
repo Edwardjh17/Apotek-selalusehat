@@ -26,7 +26,7 @@
                 <th>Nama Pembeli</th>
                 <th>Banyak</th>
                 <th>Total Penjualan</th>
-                <th>Act</th>
+                <th></th>
               </thead>
               <tbody>
               <?php 
