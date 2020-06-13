@@ -648,4 +648,19 @@ class Fungsi
         
 
     }
+    public function itung_obat()
+    {
+        $this->CI->load->model('data/m_stock_obat');
+        return $this->CI->m_stock_obat->getData()->num_rows();
+    }
+    public function itung_kadaluwarsa()
+    {
+        $this->CI->load->model('data/m_stock_obat');
+        return $this->CI->m_stock_obat->expired()->num_rows();
+    }
+    public function itung_abis()
+    {
+        $this->CI->load->model('data/m_stock_obat');
+        return $this->CI->m_stock_obat->outstock()->num_rows();
+    }
 }

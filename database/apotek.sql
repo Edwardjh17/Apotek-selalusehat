@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Jun 2020 pada 15.06
+-- Waktu pembuatan: 13 Jun 2020 pada 21.19
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -40,29 +40,33 @@ CREATE TABLE `cms_captcha` (
 --
 
 INSERT INTO `cms_captcha` (`captcha_id`, `captcha_time`, `ip_address`, `word`) VALUES
-(3543, 1591792584, '::1', '362338'),
-(3542, 1591792417, '::1', '743455'),
-(3541, 1591792390, '::1', '862379'),
-(3535, 1591791846, '::1', '874733'),
-(3534, 1591791830, '::1', '469515'),
-(3533, 1591788855, '::1', '246455'),
-(3532, 1591788810, '::1', '926104'),
-(3531, 1591788760, '::1', '955283'),
-(3530, 1591788758, '::1', '122578'),
-(3529, 1591788730, '::1', '797104'),
-(3528, 1591788728, '::1', '488922'),
-(3527, 1591788715, '::1', '779447'),
-(3526, 1591788432, '::1', '749818'),
-(3540, 1591792388, '::1', '867071'),
-(3539, 1591791877, '::1', '850594'),
-(3538, 1591791864, '::1', '287244'),
-(3537, 1591791862, '::1', '960236'),
-(3536, 1591791848, '::1', '387405'),
-(3544, 1591792593, '::1', '601794'),
-(3522, 1591786976, '::1', '580470'),
-(3523, 1591788244, '::1', '553825'),
-(3524, 1591788300, '::1', '885352'),
-(3525, 1591788359, '::1', '309516');
+(3610, 1592074826, '::1', '326359'),
+(3609, 1592074629, '::1', '679582'),
+(3608, 1592074252, '::1', '026657'),
+(3607, 1592074239, '::1', '419588'),
+(3606, 1592074108, '::1', '224416'),
+(3605, 1592074088, '::1', '249762'),
+(3604, 1592074075, '::1', '828725'),
+(3603, 1592074052, '::1', '057355'),
+(3590, 1592072771, '::1', '596971'),
+(3589, 1592072756, '::1', '164764'),
+(3594, 1592073094, '::1', '106688'),
+(3593, 1592073077, '::1', '873750'),
+(3602, 1592073898, '::1', '221931'),
+(3601, 1592073875, '::1', '628469'),
+(3600, 1592073184, '::1', '653206'),
+(3599, 1592073168, '::1', '185470'),
+(3598, 1592073166, '::1', '419219'),
+(3597, 1592073151, '::1', '039575'),
+(3596, 1592073122, '::1', '336419'),
+(3595, 1592073109, '::1', '321018'),
+(3592, 1592072993, '::1', '034294'),
+(3591, 1592072977, '::1', '487710'),
+(3611, 1592074842, '::1', '833246'),
+(3612, 1592075729, '::1', '244409'),
+(3613, 1592075742, '::1', '388042'),
+(3614, 1592075837, '::1', '809453'),
+(3615, 1592075853, '::1', '566564');
 
 -- --------------------------------------------------------
 
@@ -513,7 +517,98 @@ INSERT INTO `cms_log` (`id_log`, `ip`, `mac_address`, `time`, `kegiatan`, `user`
 (426, '::1', '', '2020-06-10 19:23:48', 'Logout SELALU SEHAT by psdp', 'psdp'),
 (427, '::1', '', '2020-06-10 19:24:37', 'Login  by psdp', 'psdp'),
 (428, '::1', '', '2020-06-10 19:33:06', 'Logout SELALU SEHAT by psdp', 'psdp'),
-(429, '::1', '', '2020-06-10 19:36:33', 'Login  by psdp', 'psdp');
+(429, '::1', '', '2020-06-10 19:36:33', 'Login  by psdp', 'psdp'),
+(430, '::1', '', '2020-06-12 23:02:38', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(431, '::1', '', '2020-06-12 23:03:16', 'Login  by psdp', 'psdp'),
+(432, '::1', '', '2020-06-12 23:54:17', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(433, '::1', '', '2020-06-12 23:54:31', 'Login  by psdp', 'psdp'),
+(434, '::1', '', '2020-06-13 10:48:26', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(435, '::1', '', '2020-06-13 10:48:42', 'Login  by psdp', 'psdp'),
+(436, '::1', '', '2020-06-13 10:55:49', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(437, '::1', '', '2020-06-13 10:56:02', 'Login  by psdp', 'psdp'),
+(438, '::1', '', '2020-06-13 11:00:51', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(439, '::1', '', '2020-06-13 11:03:27', 'Login  by psdp', 'psdp'),
+(440, '::1', '', '2020-06-13 13:11:34', 'Login  by psdp', 'psdp'),
+(441, '::1', '', '2020-06-13 13:18:12', 'Login  by psdp', 'psdp'),
+(442, '::1', '', '2020-06-13 13:30:09', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(443, '::1', '', '2020-06-13 13:30:25', 'Login  by psdp', 'psdp'),
+(444, '::1', '', '2020-06-13 13:53:31', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(445, '::1', '', '2020-06-13 13:53:49', 'Login  by psdp', 'psdp'),
+(446, '::1', '', '2020-06-13 14:18:12', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(447, '::1', '', '2020-06-13 14:18:26', 'Login  by psdp', 'psdp'),
+(448, '::1', '', '2020-06-13 14:36:04', 'Login  by psdp', 'psdp'),
+(449, '::1', '', '2020-06-13 15:18:40', 'Login  by psdp', 'psdp'),
+(450, '::1', '', '2020-06-13 15:46:35', 'Menambah data stock_obat dengan data sbb:<br />\r\n                    <ul><li><b>nama_obat</b> dengan value <b>Paramex</b></li><li><b>kode_obat</b> dengan value <b>pmx</b></li><li><b>jenis_obat</b> dengan value <b>1</b></li><li><b>tanggal_kadaluwarsa</b> dengan value <b>2020-01-01</b></li><li><b>jumlah_stock</b> dengan value <b>100</b></li><li><b>harga_beli</b> dengan value <b>5000</b></li><li><b>harga_jual</b> dengan value <b>6500</b></li><li><b>suplier</b> dengan value <b>1001</b></li></ul>', 'psdp'),
+(451, '::1', '', '2020-06-13 19:06:11', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(452, '::1', '', '2020-06-13 19:06:27', 'Login  by psdp', 'psdp'),
+(453, '::1', '', '2020-06-13 19:31:16', 'Login  by psdp', 'psdp'),
+(454, '::1', '', '2020-06-13 20:46:21', 'Logout Apotek Selalu Sehat by ', 'Tamu'),
+(455, '::1', '', '2020-06-13 20:46:36', 'Login  by psdp', 'psdp'),
+(456, '::1', '', '2020-06-13 22:00:29', 'Menambah data stock_obat dengan data sbb:<br />\r\n                    <ul><li><b>nama_obat</b> dengan value <b>Amoxilin</b></li><li><b>kode_obat</b> dengan value <b>amx</b></li><li><b>jenis_obat</b> dengan value <b>2</b></li><li><b>tanggal_kadaluwarsa</b> dengan value <b>2020-09-30</b></li><li><b>jumlah_stock</b> dengan value <b>8</b></li><li><b>harga_beli</b> dengan value <b>5000</b></li><li><b>harga_jual</b> dengan value <b>6500</b></li><li><b>suplier</b> dengan value <b>1002</b></li></ul>', 'psdp'),
+(457, '::1', '', '2020-06-13 22:00:57', 'Menambah data stock_obat dengan data sbb:<br />\r\n                    <ul><li><b>id</b> dengan value <b>9</b></li><li><b>nama_obat</b> dengan value <b>Amoxilin</b></li><li><b>kode_obat</b> dengan value <b>amx</b></li><li><b>jenis_obat</b> dengan value <b>2</b></li><li><b>tanggal_kadaluwarsa</b> dengan value <b>kosong</b></li><li><b>jumlah_stock</b> dengan value <b>0</b></li><li><b>harga_jual</b> dengan value <b>6500</b></li></ul>', 'psdp'),
+(458, '::1', '', '2020-06-13 22:49:14', 'Menghapus laporan dengan id 4', 'psdp'),
+(459, '::1', '', '2020-06-13 23:07:21', 'Logout Apotek Selalu Sehat by psdp', 'psdp'),
+(460, '::1', '', '2020-06-13 23:14:52', 'Login  by owner', 'owner'),
+(461, '::1', '', '2020-06-13 23:15:23', 'Logout Apotek Selalu Sehat by owner', 'owner'),
+(462, '::1', '', '2020-06-13 23:15:38', 'Login  by admin', 'admin'),
+(463, '::1', '', '2020-06-13 23:15:38', 'Login  by admin', 'admin'),
+(464, '::1', '', '2020-06-13 23:16:42', 'Logout Apotek Selalu Sehat by admin', 'admin'),
+(465, '::1', '', '2020-06-13 23:16:59', 'Login  by gudang', 'gudang'),
+(466, '::1', '', '2020-06-13 23:17:14', 'Logout Apotek Selalu Sehat by gudang', 'gudang'),
+(467, '::1', '', '2020-06-13 23:17:47', 'Login  by penjualan', 'penjualan'),
+(468, '::1', '', '2020-06-13 23:27:52', 'Menambah Data data_enjualan dengan data sbb:<br />\r\n                    <ul><li><b>tanggal_transaksi</b> dengan value <b>2020-06-13</b></li><li><b>no_referensi</b> dengan value <b>2543rfvdhg</b></li><li><b>nama_obat</b> dengan value <b>Amoxilin</b></li><li><b>harga_jual</b> dengan value <b>6500</b></li><li><b>nama_pembeli</b> dengan value <b>Kupret</b></li><li><b>banyak</b> dengan value <b>5</b></li><li><b>total_penjualan</b> dengan value <b>55000</b></li></ul>', 'penjualan'),
+(469, '::1', '', '2020-06-13 23:28:49', 'Logout Apotek Selalu Sehat by penjualan', 'penjualan'),
+(470, '::1', '', '2020-06-13 23:29:02', 'Login  by psdp', 'psdp'),
+(471, '::1', '', '2020-06-13 23:29:21', 'Menghapus laporan dengan id 3', 'psdp'),
+(472, '::1', '', '2020-06-14 00:32:51', 'Menambah Data suplier dengan data sbb:<br />\r\n                    <ul><li><b>nama_suplier</b> dengan value <b>Berkah Abadi</b></li><li><b>no_telephone</b> dengan value <b>62896764368</b></li><li><b>alamat</b> dengan value <b>Peterongan</b></li></ul>', 'psdp'),
+(473, '::1', '', '2020-06-14 00:38:17', 'Menambah Data suplier dengan data sbb:<br />\r\n                    <ul><li><b>nama_suplier</b> dengan value <b>Mundur Terartur</b></li><li><b>no_telephone</b> dengan value <b>62888466178</b></li><li><b>alamat</b> dengan value <b>Semarang Barat</b></li><li><b>keterangan</b> dengan value <b>Panadol, Amoxilin, Tilung</b></li></ul>', 'psdp'),
+(474, '::1', '', '2020-06-14 00:38:44', 'Menambah Data suplier dengan data sbb:<br />\r\n                    <ul><li><b>id</b> dengan value <b>1</b></li><li><b>nama_suplier</b> dengan value <b>Berkah Abadi</b></li><li><b>no_telephone</b> dengan value <b>2147483647</b></li><li><b>alamat</b> dengan value <b>Peterongan</b></li><li><b>keterangan</b> dengan value <b>Bodrex, Panadol, Antangin</b></li></ul>', 'psdp'),
+(475, '::1', '', '2020-06-14 00:39:58', 'Menambah Data suplier dengan data sbb:<br />\r\n                    <ul><li><b>nama_suplier</b> dengan value <b>Selalu Jaya</b></li><li><b>no_telephone</b> dengan value <b>62852374298</b></li><li><b>alamat</b> dengan value <b>Sekaran</b></li><li><b>keterangan</b> dengan value <b>Insana</b></li></ul>', 'psdp');
+INSERT INTO `cms_log` (`id_log`, `ip`, `mac_address`, `time`, `kegiatan`, `user`) VALUES
+(476, '::1', '', '2020-06-14 00:40:48', 'Menambah Data suplier dengan data sbb:<br />\r\n                    <ul><li><b>nama_suplier</b> dengan value <b>Mundur Berkah</b></li><li><b>no_telephone</b> dengan value <b>6287562348</b></li><li><b>alamat</b> dengan value <b>Tembalang</b></li><li><b>keterangan</b> dengan value <b>Perban</b></li></ul>', 'psdp'),
+(477, '::1', '', '2020-06-14 00:42:14', 'Menambah Data suplier dengan data sbb:<br />\r\n                    <ul><li><b>id</b> dengan value <b>4</b></li><li><b>nama_suplier</b> dengan value <b>Mundur Berkah</b></li><li><b>no_telephone</b> dengan value <b>45263687894</b></li><li><b>alamat</b> dengan value <b>Tembalang</b></li><li><b>keterangan</b> dengan value <b>Perban</b></li></ul>', 'psdp'),
+(478, '::1', '', '2020-06-14 00:45:59', 'Menambah Data suplier dengan data sbb:<br />\r\n                    <ul><li><b>nama_suplier</b> dengan value <b>Mantap Jiwa</b></li><li><b>no_telephone</b> dengan value <b>3526632928</b></li><li><b>alamat</b> dengan value <b>Jati Diri</b></li><li><b>keterangan</b> dengan value <b>Betadin</b></li></ul>', 'psdp'),
+(479, '::1', '', '2020-06-14 00:51:23', 'Menambah Data suplier dengan data sbb:<br />\r\n                    <ul><li><b>nama_suplier</b> dengan value <b>Infinix</b></li><li><b>no_telephone</b> dengan value <b>2456476878</b></li><li><b>alamat</b> dengan value <b>pengkol</b></li><li><b>keterangan</b> dengan value <b>Bahan</b></li></ul>', 'psdp'),
+(480, '::1', '', '2020-06-14 00:51:37', 'Menghapus laporan dengan id 6', 'psdp'),
+(481, '::1', '', '2020-06-14 00:52:33', 'Menambah Data data_enjualan dengan data sbb:<br />\r\n                    <ul><li><b>tanggal_transaksi</b> dengan value <b>2020-06-10</b></li><li><b>no_referensi</b> dengan value <b>e2r3fgv2</b></li><li><b>nama_obat</b> dengan value <b>Panadol</b></li><li><b>harga_jual</b> dengan value <b>9000</b></li><li><b>nama_pembeli</b> dengan value <b>Tompel</b></li><li><b>banyak</b> dengan value <b>3</b></li><li><b>total_penjualan</b> dengan value <b>27000</b></li></ul>', 'psdp'),
+(482, '::1', '', '2020-06-14 00:58:35', 'Menghapus laporan dengan id 1', 'psdp'),
+(483, '::1', '', '2020-06-14 00:58:36', 'Menghapus laporan dengan id 6', 'psdp'),
+(484, '::1', '', '2020-06-14 00:59:34', 'Menambah data stock_obat dengan data sbb:<br />\r\n                    <ul><li><b>nama_obat</b> dengan value <b>Insana</b></li><li><b>kode_obat</b> dengan value <b>ins</b></li><li><b>jenis_obat</b> dengan value <b>2</b></li><li><b>tanggal_kadaluwarsa</b> dengan value <b>2020-01-29</b></li><li><b>jumlah_stock</b> dengan value <b>7</b></li><li><b>harga_beli</b> dengan value <b>5000</b></li><li><b>harga_jual</b> dengan value <b>5500</b></li><li><b>suplier</b> dengan value <b>4</b></li></ul>', 'psdp'),
+(485, '::1', '', '2020-06-14 01:00:29', 'Menambah data stock_obat dengan data sbb:<br />\r\n                    <ul><li><b>nama_obat</b> dengan value <b>Tilung</b></li><li><b>kode_obat</b> dengan value <b>tl</b></li><li><b>jenis_obat</b> dengan value <b>3</b></li><li><b>tanggal_kadaluwarsa</b> dengan value <b>2020-11-27</b></li><li><b>jumlah_stock</b> dengan value <b>5</b></li><li><b>harga_beli</b> dengan value <b>10000</b></li><li><b>harga_jual</b> dengan value <b>15000</b></li><li><b>suplier</b> dengan value <b>3</b></li></ul>', 'psdp'),
+(486, '::1', '', '2020-06-14 01:01:19', 'Menambah data stock_obat dengan data sbb:<br />\r\n                    <ul><li><b>nama_obat</b> dengan value <b>Bodrex</b></li><li><b>kode_obat</b> dengan value <b>bdr</b></li><li><b>jenis_obat</b> dengan value <b>2</b></li><li><b>tanggal_kadaluwarsa</b> dengan value <b>2020-06-14</b></li><li><b>jumlah_stock</b> dengan value <b>100</b></li><li><b>harga_beli</b> dengan value <b>3000</b></li><li><b>harga_jual</b> dengan value <b>3500</b></li><li><b>suplier</b> dengan value <b>2</b></li></ul>', 'psdp'),
+(487, '::1', '', '2020-06-14 01:02:53', 'Menambah data stock_obat dengan data sbb:<br />\r\n                    <ul><li><b>nama_obat</b> dengan value <b>Antangin</b></li><li><b>kode_obat</b> dengan value <b>atg</b></li><li><b>jenis_obat</b> dengan value <b>3</b></li><li><b>tanggal_kadaluwarsa</b> dengan value <b>2020-07-14</b></li><li><b>jumlah_stock</b> dengan value <b>50</b></li><li><b>harga_beli</b> dengan value <b>5000</b></li><li><b>harga_jual</b> dengan value <b>7500</b></li><li><b>suplier</b> dengan value <b>1</b></li></ul>', 'psdp'),
+(488, '::1', '', '2020-06-14 01:25:55', 'Logout Apotek Selalu Sehat by psdp', 'psdp'),
+(489, '::1', '', '2020-06-14 01:26:10', 'Login  by owner', 'owner'),
+(490, '::1', '', '2020-06-14 01:29:35', 'Logout Apotek Selalu Sehat by owner', 'owner'),
+(491, '::1', '', '2020-06-14 01:29:52', 'Login  by admin', 'admin'),
+(492, '::1', '', '2020-06-14 01:31:08', 'Menambah Master user dengan data sbb:<br />\r\n                    <ul><li><b>nama</b> dengan value <b>suplier</b></li><li><b>username</b> dengan value <b>suplier</b></li><li><b>jenis_kelamin</b> dengan value <b>1</b></li><li><b>email</b> dengan value <b>suplier</b></li><li><b>password</b> dengan value <b>*58F60E33CFF5ECD8932D6D087E71D2DE7C8021C1</b></li><li><b>level</b> dengan value <b>6</b></li><li><b>alamat</b> dengan value <b>Jati Diri</b></li><li><b>gambar</b> dengan value <b>files/2020/06/d51ac2e4f68bb66eb851c10f5f48c9be.jpg</b></li><li><b>no_hp</b> dengan value <b>8457686</b></li></ul>', 'admin'),
+(493, '::1', '', '2020-06-14 01:31:15', 'Logout Apotek Selalu Sehat by admin', 'admin'),
+(494, '::1', '', '2020-06-14 01:31:33', 'Login  by gudang', 'gudang'),
+(495, '::1', '', '2020-06-14 01:31:48', 'Logout Apotek Selalu Sehat by gudang', 'gudang'),
+(496, '::1', '', '2020-06-14 01:32:03', 'Login  by penjualan', 'penjualan'),
+(497, '::1', '', '2020-06-14 01:32:29', 'Logout Apotek Selalu Sehat by penjualan', 'penjualan'),
+(498, '::1', '', '2020-06-14 01:33:04', 'Login  by suplier', 'suplier'),
+(499, '::1', '', '2020-06-14 01:44:32', 'Logout Apotek Selalu Sehat by suplier', 'suplier'),
+(500, '::1', '', '2020-06-14 01:44:58', 'Login  by psdp', 'psdp'),
+(501, '::1', '', '2020-06-14 01:45:48', 'Mengubah user dengan data sbb:<br />\r\n                    <ul><li><b>id</b> dengan value <b>35</b></li><li><b>nama</b> dengan value <b>Kupret</b></li><li><b>email</b> dengan value <b>owner</b></li><li><b>username</b> dengan value <b>owner</b></li><li><b>level</b> dengan value <b>2</b></li><li><b>alamat</b> dengan value <b>mojo</b></li><li><b>no_hp</b> dengan value <b>26547267982</b></li><li><b>jenis_kelamin</b> dengan value <b>1</b></li></ul>', 'psdp'),
+(502, '::1', '', '2020-06-14 01:46:12', 'Mengubah user dengan data sbb:<br />\r\n                    <ul><li><b>id</b> dengan value <b>36</b></li><li><b>nama</b> dengan value <b>Tompel</b></li><li><b>email</b> dengan value <b>admin</b></li><li><b>username</b> dengan value <b>admin</b></li><li><b>level</b> dengan value <b>3</b></li><li><b>alamat</b> dengan value <b>mangkang</b></li><li><b>no_hp</b> dengan value <b>16228</b></li><li><b>jenis_kelamin</b> dengan value <b>1</b></li></ul>', 'psdp'),
+(503, '::1', '', '2020-06-14 01:46:39', 'Mengubah user dengan data sbb:<br />\r\n                    <ul><li><b>id</b> dengan value <b>37</b></li><li><b>nama</b> dengan value <b>Reza</b></li><li><b>email</b> dengan value <b>gudang</b></li><li><b>username</b> dengan value <b>gudang</b></li><li><b>level</b> dengan value <b>4</b></li><li><b>alamat</b> dengan value <b>sekaran</b></li><li><b>no_hp</b> dengan value <b>13167</b></li><li><b>jenis_kelamin</b> dengan value <b>1</b></li></ul>', 'psdp'),
+(504, '::1', '', '2020-06-14 01:46:51', 'Mengubah user dengan data sbb:<br />\r\n                    <ul><li><b>id</b> dengan value <b>38</b></li><li><b>nama</b> dengan value <b>Anisa</b></li><li><b>email</b> dengan value <b>penjualan</b></li><li><b>username</b> dengan value <b>penjualan</b></li><li><b>level</b> dengan value <b>5</b></li><li><b>alamat</b> dengan value <b>tugu</b></li><li><b>no_hp</b> dengan value <b>1563674</b></li><li><b>jenis_kelamin</b> dengan value <b>2</b></li></ul>', 'psdp'),
+(505, '::1', '', '2020-06-14 01:47:28', 'Mengubah user dengan data sbb:<br />\r\n                    <ul><li><b>id</b> dengan value <b>39</b></li><li><b>nama</b> dengan value <b>Mundur Teratur</b></li><li><b>email</b> dengan value <b>suplier</b></li><li><b>username</b> dengan value <b>suplier</b></li><li><b>level</b> dengan value <b>6</b></li><li><b>alamat</b> dengan value <b>Jati Diri</b></li><li><b>no_hp</b> dengan value <b>8457686</b></li><li><b>jenis_kelamin</b> dengan value <b>1</b></li></ul>', 'psdp'),
+(506, '::1', '', '2020-06-14 01:47:30', 'Logout Apotek Selalu Sehat by psdp', 'psdp'),
+(507, '::1', '', '2020-06-14 01:47:54', 'Login  by Mundur Teratur', 'suplier'),
+(508, '::1', '', '2020-06-14 01:48:06', 'Logout Apotek Selalu Sehat by Mundur Teratur', 'suplier'),
+(509, '::1', '', '2020-06-14 01:48:27', 'Login  by Tompel', 'admin'),
+(510, '::1', '', '2020-06-14 01:50:37', 'Logout Apotek Selalu Sehat by Tompel', 'admin'),
+(511, '::1', '', '2020-06-14 01:50:52', 'Login  by Kupret', 'owner'),
+(512, '::1', '', '2020-06-14 01:57:06', 'Logout Apotek Selalu Sehat by Kupret', 'owner'),
+(513, '::1', '', '2020-06-14 02:00:42', 'Login  by Kupret', 'owner'),
+(514, '::1', '', '2020-06-14 02:15:27', 'Logout Apotek Selalu Sehat by Kholiq', 'kholiq'),
+(515, '::1', '', '2020-06-14 02:15:42', 'Login  by Mundur Teratur', 'suplier'),
+(516, '::1', '', '2020-06-14 02:17:12', 'Logout Apotek Selalu Sehat by Mundur Teratur', 'suplier'),
+(517, '::1', '', '2020-06-14 02:17:33', 'Login  by psdp', 'psdp'),
+(518, '::1', '', '2020-06-14 02:17:57', 'Menambah Data suplier dengan data sbb:<br />\r\n                    <ul><li><b>id</b> dengan value <b>5</b></li><li><b>nama_suplier</b> dengan value <b>Mantap Jiwa</b></li><li><b>no_telephone</b> dengan value <b>56347279</b></li><li><b>alamat</b> dengan value <b>Jati Diri</b></li><li><b>keterangan</b> dengan value <b>Betadi</b></li></ul>', 'psdp'),
+(519, '::1', '', '2020-06-14 02:17:59', 'Menghapus laporan dengan id 5', 'psdp');
 
 -- --------------------------------------------------------
 
@@ -543,15 +638,13 @@ INSERT INTO `cms_menu` (`id`, `alias`, `nama`, `deskripsi`, `allowed_level`, `ur
 (35, 'semua', 'semua', 'untuk login semua', '+1+2+3+4+5+6+8+7+', 'cms/login/admin_page', 1, 1, 3),
 (88, 'crud_user', 'Tambah,edit,delete user', 'tambah_edit_delete', '+1+2+3+4+5+6+7+8+', 'apl/crud', 1, 1, 3),
 (102, 'log', 'Log System', 'Log System', '+1+', 'cms/catatan/catat', 1, 2, 1),
-(150, 'obat_keluar', 'Obat Keluar', '-', '+1+4+', 'input/obat_keluar', 1, 1, 4),
-(104, 'status_pak', 'Home', 'Status Pengajuan PAK', '+1+2+3+4+5+6+7+8+', 'pak/dashboard/status_pak', 1, 1, 101),
-(157, 'penjualan', 'Penjualan', '-', '+1+5+', 'input/penjualan', 1, 3, 4),
-(156, 'data_penjualan', 'Data Penjualan', '-', '+1+2+3+4+5+', 'data/data_penjualan', 1, 4, 2),
+(104, 'status_pak', 'Home', 'Status Pengajuan PAK', '+1+2+3+4+5+6+', 'pak/dashboard/status_pak', 1, 1, 101),
+(156, 'data_penjualan', 'Data Penjualan', '-', '+1+2+3+5+', 'penjualan/data_penjualan', 1, 1, 4),
 (154, 'suplier', 'Suplier', '-', '+1+2+3+4+', 'data/suplier', 1, 3, 2),
-(155, 'obat_masuk', 'Obat Masuk', '-', '+1+3+', 'input/obat_masuk', 1, 2, 4),
-(153, 'pegawai', 'Pegawai', '-', '+1+2+3', 'data/pegawai', 1, 2, 2),
-(151, 'return', 'Return', '-', '+1+2+3+4+', 'retrun/retrun', 1, 1, 7),
-(152, 'stock_obat', 'Stock Obat', '-', '+1+2+3+4+5+6+', 'stock/stock_obat', 1, 1, 2);
+(153, 'pegawai', 'Pegawai', '-', '+1+2+3+', 'data/pegawai', 1, 2, 2),
+(158, 'obat_kadaluwarsa', 'Obat Kadaluwarsa', '-', '+1+2+3+4+5+', 'obat/obat_kadaluwarsa', 1, 2, 5),
+(152, 'stock_obat', 'Stock Obat', '-', '+1+2+3+4+5+', 'obat/stock_obat', 1, 1, 5),
+(159, 'obat_habis', 'Obat Habis', '-', '+1+2+3+4+5+6+', 'obat/Obat_habis', 1, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -572,10 +665,10 @@ CREATE TABLE `cms_menu_grup` (
 INSERT INTO `cms_menu_grup` (`id_grup_menu`, `nama_grup`, `icon`) VALUES
 (3, 'Hidden Menu', NULL),
 (1, 'Manajemen', 'fa fa-fw fa-book'),
-(2, 'Data', 'fa fa-fw fa-archive'),
+(2, 'Data', 'fa fa-fw fa-suitcase'),
 (101, 'Dashboard', 'fa fa-dashboard'),
-(4, 'Input', 'fa fa-fw fa-tasks'),
-(7, 'Return', 'fa fa-fw fa-envelope');
+(4, 'Penjualan', 'fa fa-fw fa-shopping-cart'),
+(5, 'Obat', 'fa fa-fw fa-hourglass-2');
 
 -- --------------------------------------------------------
 
@@ -613,6 +706,7 @@ CREATE TABLE `cms_user` (
   `level` int(10) DEFAULT NULL,
   `bagian` int(11) DEFAULT '1',
   `no_hp` varchar(100) DEFAULT NULL,
+  `alamat` text,
   `last_login` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
@@ -620,15 +714,38 @@ CREATE TABLE `cms_user` (
 -- Dumping data untuk tabel `cms_user`
 --
 
-INSERT INTO `cms_user` (`id`, `nama`, `jenis_kelamin`, `gambar`, `email`, `username`, `password`, `level`, `bagian`, `no_hp`, `last_login`) VALUES
-(1, 'psdp', NULL, NULL, 'psdp', 'psdp', '*F1378C253EEBE31F135CC41EF4A98D077EB98F5D', 1, 1, '9', '2020-06-10 19:36:33'),
-(17, 'admin', '1', 'files/2020/05/24dfeeb34e92bc2ddf1aca0bf3c2ce98.jpg', 'admin', 'admin', '*6D45FD76D5E9C6A404E39C25106A7F032659ACB8', 2, 0, '88888888888', '2020-06-03 21:51:58'),
-(18, 'kepala_lab', '2', 'files/2020/05/b9bc5717ad559fdd46b73b0c369b089a.jpg', 'kepala_lab', 'kepala_lab', '*9575C0046B29C853A98731B0053B780947E0524B', 3, 1, '9', NULL),
-(19, 'laboran', '1', 'files/2020/05/21c379d76f68969567b1b2e5c40e48f3.jpg', 'laboran', 'laboran', '*C7E1AAB5C1E92CE2835AB5E35BC54EAC2D290817', 4, 1, '9', '2020-06-03 21:48:20'),
-(20, 'koordinator_lab', '1', 'files/2020/05/ae5395d6d32f2bbdfc3a08767e41152d.jpg', 'koordinator_lab', 'koordinator_lab', '*EC2A9F2AC0FF65E0B34FB7C1CE20030855EFF156', 5, 1, '9', NULL),
-(21, 'asisten', '2', 'files/2020/05/ea2fbde56d3e1f0a302267e4d4f7b04f.jpg', 'asisten', 'asisten', '*34D4F44511DF537724AECB9C20245800A653C680', 6, 1, '9', NULL),
-(23, 'mahasiswa', '2', 'files/2020/05/3448f7f0daa177766c9142c47441a803.jpg', 'mahasiswa', 'mahasiswa', '*58B1E0151C7DBF4DF0D59581B6C5C4E031D9F62A', 8, 1, '9', '2020-05-29 13:09:24'),
-(30, 'dosen', '1', 'files/2020/06/106292ac4c5fa37adf7eb3cc11880936.jpg', 'dosen', 'dosen', '*48A0B1F829AA82E193E29FD7B0FBDB0A146AA710', 7, 1, '9', NULL);
+INSERT INTO `cms_user` (`id`, `nama`, `jenis_kelamin`, `gambar`, `email`, `username`, `password`, `level`, `bagian`, `no_hp`, `alamat`, `last_login`) VALUES
+(1, 'psdp', '1', NULL, 'psdp', 'psdp', '*9EC856C2E06E6AC01D8449D4D38B86711E7CAD79', 1, 1, '10', NULL, '2020-06-14 02:17:33'),
+(35, 'Kupret', '1', 'files/2020/06/fccd18f5dc9f85921a255ff8adfd57bc.jpg', 'owner', 'owner', '*63BDB583FB0A02D3A02FD5F95B187027DA5FD46F', 2, 1, '26547267982', 'mojo', '2020-06-14 02:00:42'),
+(36, 'Tompel', '1', 'files/2020/06/0eedc18985ba07446a2a02e305c55f35.jpg', 'admin', 'admin', '*23EF57C77F8C48E0F66F59339F9729BADAFD3F37', 3, 1, '16228', 'mangkang', '2020-06-14 01:48:27'),
+(37, 'Reza', '1', 'files/2020/06/7ce353160bb6bd06e890e459df64362d.jpg', 'gudang', 'gudang', '*11D9B51247BF1F765480BA5BA3D76889405AFD3C', 4, 1, '13167', 'sekaran', '2020-06-14 01:31:33'),
+(38, 'Anisa', '2', 'files/2020/06/8aa483efcea16689c2657b2204a96c47.jpg', 'penjualan', 'penjualan', '*270725E0ADF2B7A9E08DFE0069FCE6A01352652B', 5, 1, '1563674', 'tugu', '2020-06-14 01:32:02'),
+(39, 'Mundur Teratur', '1', 'files/2020/06/d51ac2e4f68bb66eb851c10f5f48c9be.jpg', 'suplier', 'suplier', '*58F60E33CFF5ECD8932D6D087E71D2DE7C8021C1', 6, 1, '8457686', 'Jati Diri', '2020-06-14 02:15:42');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `data_penjualan`
+--
+
+CREATE TABLE `data_penjualan` (
+  `id` int(11) NOT NULL,
+  `tanggal_transaksi` varchar(255) NOT NULL,
+  `no_referensi` varchar(255) NOT NULL,
+  `nama_obat` varchar(255) NOT NULL,
+  `harga_jual` int(11) NOT NULL,
+  `nama_pembeli` varchar(255) NOT NULL,
+  `banyak` int(255) NOT NULL,
+  `total_penjualan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `data_penjualan`
+--
+
+INSERT INTO `data_penjualan` (`id`, `tanggal_transaksi`, `no_referensi`, `nama_obat`, `harga_jual`, `nama_pembeli`, `banyak`, `total_penjualan`) VALUES
+(4, '2020-06-13', '2543rfvdhg', 'Amoxilin', 6500, 'Kupret', 5, '55000'),
+(5, '2020-06-10', 'e2r3fgv2', 'Panadol', 9000, 'Tompel', 3, '27000');
 
 -- --------------------------------------------------------
 
@@ -652,21 +769,24 @@ INSERT INTO `jenis_kelamin` (`id`, `jenis_kelamin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `master_bagian`
+-- Struktur dari tabel `jenis_obat`
 --
 
-CREATE TABLE `master_bagian` (
+CREATE TABLE `jenis_obat` (
   `id` int(11) NOT NULL,
-  `bagian` varchar(225) NOT NULL
+  `jenis_obat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `master_bagian`
+-- Dumping data untuk tabel `jenis_obat`
 --
 
-INSERT INTO `master_bagian` (`id`, `bagian`) VALUES
-(0, 'NonAktif'),
-(1, 'Aktif');
+INSERT INTO `jenis_obat` (`id`, `jenis_obat`) VALUES
+(1, 'Kapsul'),
+(2, 'Tablet'),
+(3, 'Sirup'),
+(4, 'Pil'),
+(5, 'Sirup Kering/ Serbuk');
 
 -- --------------------------------------------------------
 
@@ -690,6 +810,61 @@ INSERT INTO `master_level` (`id`, `level`) VALUES
 (4, 'Gudang'),
 (5, 'Penjualan'),
 (6, 'Suplier');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `stock_obat`
+--
+
+CREATE TABLE `stock_obat` (
+  `id` int(11) NOT NULL,
+  `nama_obat` varchar(30) NOT NULL,
+  `kode_obat` varchar(30) NOT NULL,
+  `jenis_obat` varchar(255) NOT NULL,
+  `tanggal_masuk` date NOT NULL,
+  `tanggal_kadaluwarsa` date NOT NULL,
+  `jumlah_stock` int(11) NOT NULL,
+  `harga_beli` int(11) NOT NULL,
+  `harga_jual` int(11) NOT NULL,
+  `suplier` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `stock_obat`
+--
+
+INSERT INTO `stock_obat` (`id`, `nama_obat`, `kode_obat`, `jenis_obat`, `tanggal_masuk`, `tanggal_kadaluwarsa`, `jumlah_stock`, `harga_beli`, `harga_jual`, `suplier`) VALUES
+(8, 'Paramex', 'pmx', '1', '0000-00-00', '2020-01-01', 100, 5000, 6500, 1001),
+(9, 'Amoxilin', 'amx', '2', '0000-00-00', '0000-00-00', 0, 5000, 6500, 1002),
+(10, 'Insana', 'ins', '2', '0000-00-00', '2020-01-29', 7, 5000, 5500, 4),
+(11, 'Tilung', 'tl', '3', '0000-00-00', '2020-11-27', 5, 10000, 15000, 3),
+(12, 'Bodrex', 'bdr', '2', '0000-00-00', '2020-06-14', 100, 3000, 3500, 2),
+(13, 'Antangin', 'atg', '3', '0000-00-00', '2020-07-14', 50, 5000, 7500, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `suplier`
+--
+
+CREATE TABLE `suplier` (
+  `id` int(11) NOT NULL,
+  `nama_suplier` varchar(255) NOT NULL,
+  `no_telephone` varchar(13) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `suplier`
+--
+
+INSERT INTO `suplier` (`id`, `nama_suplier`, `no_telephone`, `alamat`, `keterangan`) VALUES
+(1, 'Berkah Abadi', '65367478', 'Peterongan', 'Bodrex, Panadol, Antangin'),
+(2, 'Mundur Terartur', '45673', 'Semarang Barat', 'Panadol, Amoxilin, Tilung'),
+(3, 'Selalu Jaya', '2147483647', 'Sekaran', 'Insana'),
+(4, 'Mundur Berkah', '326578598', 'Tembalang', 'Perban');
 
 --
 -- Indexes for dumped tables
@@ -733,15 +908,21 @@ ALTER TABLE `cms_user`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
+-- Indeks untuk tabel `data_penjualan`
+--
+ALTER TABLE `data_penjualan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `jenis_kelamin`
 --
 ALTER TABLE `jenis_kelamin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `master_bagian`
+-- Indeks untuk tabel `jenis_obat`
 --
-ALTER TABLE `master_bagian`
+ALTER TABLE `jenis_obat`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -751,6 +932,18 @@ ALTER TABLE `master_level`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
+-- Indeks untuk tabel `stock_obat`
+--
+ALTER TABLE `stock_obat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `suplier`
+--
+ALTER TABLE `suplier`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -758,19 +951,19 @@ ALTER TABLE `master_level`
 -- AUTO_INCREMENT untuk tabel `cms_captcha`
 --
 ALTER TABLE `cms_captcha`
-  MODIFY `captcha_id` bigint(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3545;
+  MODIFY `captcha_id` bigint(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3616;
 
 --
 -- AUTO_INCREMENT untuk tabel `cms_log`
 --
 ALTER TABLE `cms_log`
-  MODIFY `id_log` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=430;
+  MODIFY `id_log` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=520;
 
 --
 -- AUTO_INCREMENT untuk tabel `cms_menu`
 --
 ALTER TABLE `cms_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- AUTO_INCREMENT untuk tabel `cms_menu_grup`
@@ -782,7 +975,13 @@ ALTER TABLE `cms_menu_grup`
 -- AUTO_INCREMENT untuk tabel `cms_user`
 --
 ALTER TABLE `cms_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT untuk tabel `data_penjualan`
+--
+ALTER TABLE `data_penjualan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `jenis_kelamin`
@@ -791,16 +990,28 @@ ALTER TABLE `jenis_kelamin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `master_bagian`
+-- AUTO_INCREMENT untuk tabel `jenis_obat`
 --
-ALTER TABLE `master_bagian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `jenis_obat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `master_level`
 --
 ALTER TABLE `master_level`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `stock_obat`
+--
+ALTER TABLE `stock_obat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT untuk tabel `suplier`
+--
+ALTER TABLE `suplier`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

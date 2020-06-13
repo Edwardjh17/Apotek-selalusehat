@@ -7,20 +7,13 @@
     <?php echo form_open('',array('name'=>'faddmenugrup','class'=>'form-horizontal','role'=>'form'));?>
         
         <div class="form-group">
-            <label class="col-sm-4 control-label">Id</label>
-            <div class="col-sm-8">
-            <?php echo form_hidden('id',$row->id); ?>
-            <?php echo form_input(array('name'=>'id','value'=>$row->id,'class'=>'form-control'));?>
-            <?php echo form_error('id');?>
-            </div>
-            </div>
-        <div class="form-group">
             <label class="col-sm-4 control-label">Nama Suplier</label>
             <div class="col-sm-8">
+            <?php echo form_hidden('id',$row->id); ?>
             <?php echo form_input(array('name'=>'nama_suplier','value'=>$row->nama_suplier,'class'=>'form-control'));?>
             <?php echo form_error('nama_suplier');?>
             </div>
-        </div>
+            </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">No Telephone</label>
             <div class="col-sm-8">
@@ -33,6 +26,13 @@
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'alamat','value'=>$row->alamat,'class'=>'form-control'));?>
             <?php echo form_error('alamat');?>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Keterangan</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'keterangan','value'=>$row->keterangan,'class'=>'form-control'));?>
+            <?php echo form_error('keterangan');?>
             </div>
         </div>
         <div class="form-group">

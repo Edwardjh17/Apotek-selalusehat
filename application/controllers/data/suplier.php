@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class suplier extends CI_Controller {
-
+class Suplier extends CI_Controller {
+	
 	public function __construct()
 	{
 		parent::__construct();
@@ -16,11 +16,10 @@ class suplier extends CI_Controller {
 		$data['suplier'] = $this->m_suplier->getData();
 		$this->load->view('data/suplier/v_suplier_list',$data);
 	}
-
 	public function form($param='')
 	{
 		$content   = "<div id='divsubcontent'></div>";
-		$header    = "Form Suplier";
+		$header    = "Form Data Suplier";
 		$subheader = "suplier";
 		$buttons[] = button('jQuery.facebox.close()','Tutup','btn btn-default','data-dismiss="modal"');
 		echo $this->fungsi->parse_modal($header,$subheader,$content,$buttons,"");
@@ -31,7 +30,6 @@ class suplier extends CI_Controller {
 			$this->fungsi->run_js('load_silent("data/suplier/show_editForm/'.$base_kom.'","#divsubcontent")');	
 		}
 	}
-
 	public function show_addForm()
 	{
 		$this->fungsi->check_previleges('suplier');
@@ -53,14 +51,13 @@ class suplier extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_suplier','no_telephone','alamat'));
+			$datapost = get_post_data(array('id','nama_suplier','no_telephone','alamat','keterangan'));
 			$this->m_suplier->insertData($datapost);
 			$this->fungsi->run_js('load_silent("data/suplier","#content")');
-			$this->fungsi->message_box("Data suplier sukses disimpan...","success");
-            $this->fungsi->catat($datapost,"Menambah Data suplier dengan data sbb:",true);
-        }
+			$this->fungsi->message_box("Data Suplier sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah Data suplier dengan data sbb:",true);
+		}
 	}
-
 	public function show_editForm($id='')
 	{
 		$this->fungsi->check_previleges('suplier');
@@ -88,21 +85,23 @@ class suplier extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_suplier','no_telephone','alamat'));
+			$datapost = get_post_data(array('id','nama_suplier','no_telephone','alamat','keterangan'));
 			$this->m_suplier->updateData($datapost);
 			$this->fungsi->run_js('load_silent("data/suplier","#content")');
-			$this->fungsi->message_box("Data suplier sukses diperbarui...","success");
-            $this->fungsi->catat($datapost,"Mengedit Data suplier dengan data sbb:",true);   
-        }  
-    }
-
-    public function delete()
-            {
-                $id = $this->uri->segment(4);
-                $this->m_suplier->deleteData($id);
-                redirect('admin');
-            }
+			$this->fungsi->message_box("Data Suplier sukses disimpan...","success");
+			$this->fungsi->catat($datapost,"Menambah Data suplier dengan data sbb:",true);
+		}
+	}
+	public function delete($id)
+	{
+		$this->fungsi->check_previleges('suplier');
+		if($id == '' || !is_numeric($id)) die;
+		$this->m_suplier->deleteData($id);
+		$this->fungsi->run_js('load_silent("data/suplier","#content")');
+		$this->fungsi->message_box("Data suplier berhasil dihapus...","notice");
+		$this->fungsi->catat("Menghapus laporan dengan id ".$id);
+	}
 }
 
-/* End of file suplier.php */
-/* Location: ./application/controllers/data/suplier.php */
+
+	

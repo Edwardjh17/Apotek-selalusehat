@@ -1,4 +1,8 @@
-
+<section class="content-header">
+    <h1>Dashboard 
+        <small>Dashboard</small>
+    </h1>
+</section>
 <div class="col-md-12">
           <!-- Widget: user widget style 1 -->
           <div class="box box-widget widget-user">
@@ -24,6 +28,14 @@
 						</span>
                   </div>
                   <!-- /.description-block -->
+                </div>
+                <div class="box-body">
+                <div class="row">
+                <div class="col-sm-12 border-right">
+                <?php require_once ('application/views/dasbord.php') ?>
+                <?php require_once ('application/views/dasbord.php') ?>
+                </div>
+                </div>
                 </div>
                 
                 <!-- /.col -->

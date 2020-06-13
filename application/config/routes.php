@@ -41,6 +41,8 @@
 $route['default_controller'] = "login";
 $route['404_override'] = '';
 
+$route['stock/in'] ='stock/stock_in_data';
+$route['input/input_obat_masuk/input_obat_masuk_add'] = 'input/obat_masuk/stock_in_add';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="<?=base_url();?>assets/plugins/pace/pace.min.css">
   <link href="<?=base_url();?>assets/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
   </head>
-  <body class="hold-transition skin-green-light sidebar-mini fixed">
+  <body class="hold-transition skin-green sidebar-mini fixed">
   <style type="text/css">
   .not-active {
    pointer-events: none;
@@ -100,7 +100,7 @@
             </div>
           </div>
           <ul class="sidebar-menu">
-            <li class="header" style="background:#E8E8E8;"><b>MENU UTAMA</b></li>
+            <li class="header" ><b>MENU UTAMA</b></li>
             <li class="active treeview">
               
              

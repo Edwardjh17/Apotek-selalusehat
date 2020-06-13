@@ -3,12 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class m_data_penjualan extends CI_Model {
 //select->read
-	public function getData($value='')
-	{
-		$this->db->from('data_penjualan ma');
-		$this->db->order_by('ma.id','desc');
-		return $this->db->get();
-	}
+public function getData($value='')
+{
+	$this->db->from('data_penjualan dp');
+	$this->db->order_by('dp.id', 'desc');
+	return $this->db->get();
+}
     //insert->create
 	public function insertData($data='')
 	{

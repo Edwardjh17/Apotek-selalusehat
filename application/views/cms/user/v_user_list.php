@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '3' ) {
+              if ($sesi == '1' || $sesi == '2'|| $sesi == '3' ) {
                 echo button('load_silent("data/pegawai/show_addForm/","#content")','Tambah Pegawai','btn btn-success','data-toggle="tooltip" title="Tambah Pegawai"');
               } else {
                 # code...
@@ -51,7 +51,7 @@
             <td align="center">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '3' ) {
+              if ($sesi == '1' || $sesi == '2'|| $sesi == '3' ) {
                 echo button('load_silent("data/pegawai/show_editForm/'.$row->id.'","#content")','','btn btn-info fa fw fa-edit','data-toggle="tooltip" title="Edit"');
               } else {
                 # code...
@@ -59,7 +59,7 @@
               ?>
               <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '3' ) {
+              if ($sesi == '1' || $sesi == '2'|| $sesi == '3' ) {
                 echo button('load_silent("data/pegawai/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
               } else {
                 # code...
