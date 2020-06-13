@@ -20,11 +20,12 @@
           <div class="box-body">
             <table width="100%" id="tableku" class="table table-striped">
               <thead>
-                <th>No</th>
+                <th>Nomor</th>
                 <th>Id</th>
                 <th>Nama Suplier</th>
                 <th>No Telephone</th>
                 <th>Alamat</th>
+                <th>Act</th>
               </thead>
               <tbody>
               <?php 
