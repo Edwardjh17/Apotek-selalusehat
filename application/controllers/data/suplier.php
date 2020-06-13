@@ -53,7 +53,7 @@ class suplier extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_suplier','no_telephone','alamat'));
+			$datapost = get_post_data(array('nama_suplier','no_telephone','alamat'));
 			$this->m_suplier->insertData($datapost);
 			$this->fungsi->run_js('load_silent("data/suplier","#content")');
 			$this->fungsi->message_box("Data suplier sukses disimpan...","success");
@@ -88,7 +88,7 @@ class suplier extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_suplier','no_telephone','alamat'));
+			$datapost = get_post_data(array('nama_suplier','no_telephone','alamat'));
 			$this->m_suplier->updateData($datapost);
 			$this->fungsi->run_js('load_silent("data/suplier","#content")');
 			$this->fungsi->message_box("Data suplier sukses diperbarui...","success");
