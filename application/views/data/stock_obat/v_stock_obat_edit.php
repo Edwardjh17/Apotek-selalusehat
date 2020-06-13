@@ -22,18 +22,17 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Masuk</label>
+            <label class="col-sm-4 control-label">Jenis Obat</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_masuk','type'=>'date','class'=>'form-control'));?>
-            <?php echo form_error('tanggal_masuk');?>
-            <span id="check_data"></span>
+            <?php echo form_input(array('name'=>'jenis_obat','value'=>$row->jenis_obat,'class'=>'form-control'));?>
+            <?php echo form_error('jenis_obat');?>
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Tanggal Kadaluarsa</label>
+            <label class="col-sm-4 control-label">Tanggal Kadaluwarsa</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_kadaluarsa','type'=>'date','class'=>'form-control'));?>
-            <?php echo form_error('tanggal_kadaluarsa');?>
+            <?php echo form_input(array('name'=>'tanggal_kadaluwarsa','type'=>'date','class'=>'form-control'));?>
+            <?php echo form_error('tanggal_kadaluwarsa');?>
             <span id="check_data"></span>
             </div>
         </div>
@@ -42,6 +41,13 @@
             <div class="col-sm-8">
             <?php echo form_input(array('name'=>'jumlah_stock','value'=>$row->jumlah_stock,'class'=>'form-control'));?>
             <?php echo form_error('jumlah_stock');?>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Harga Jual</label>
+            <div class="col-sm-8">
+            <?php echo form_input(array('name'=>'harga_jual','value'=>$row->harga_jual,'class'=>'form-control'));?>
+            <?php echo form_error('harga_jual');?>
             </div>
         </div>
         <div class="form-group">

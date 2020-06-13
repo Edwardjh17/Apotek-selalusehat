@@ -23,9 +23,10 @@
                 <th>No</th>
                 <th>Nama Obat</th>
                 <th>Kode Obat</th>
-                <th>Tanggal Masuk</th>
-                <th>Tanggal Kadaluarsa</th>
+                <th>Jenis Obat</th>
+                <th>Tanggal Kadaluwarsa</th>
                 <th>Jumlah Stock</th>
+                <th>Harga Jual</th>
                 <th></th>
               </thead>
               <tbody>
@@ -36,13 +37,14 @@
             <td align="center"><?=$i++?></td>
             <td align="center"><?=$row->nama_obat?></td>
             <td align="center"><?=$row->kode_obat?></td>
-            <td align="center"><?=$row->tanggal_masuk?></td>
-            <td align="center"><?=$row->tanggal_kadaluarsa?></td>
+            <td align="center"><?=$row->jenis_obat?></td>
+            <td align="center"><?=$row->tanggal_kadaluwarsa?></td>
             <td align="center"><?=$row->jumlah_stock?></td>
+            <td align="center"><?=number_format($row->harga_jual)?></td>
             <td align="center">
             <?php
              $sesi = from_session('level');
-             if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+             if ($sesi == '1' || $sesi == '3') {
               echo button('load_silent("data/stock_obat/form/sub/'.$row->id.'","#modal")','','btn btn-info fa fa-edit','data-toggle="tooltip" title="Edit"');
              } else {
                # code...
@@ -50,7 +52,7 @@
              ?>
              <?php
              $sesi = from_session('level');
-             if ($sesi == '1' || $sesi == '2' || $sesi == '3' || $sesi == '6') {
+             if ($sesi == '1' || $sesi == '3') {
                echo button('load_silent("data/stock_obat/delete/'.$row->id.'","#content")','','btn btn-danger fa fw fa-trash','data-toggle="tooltip" title="Hapus"');
              } else {
                # code...

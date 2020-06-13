@@ -51,7 +51,7 @@ class stock_obat extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_obat','kode_obat','tanggal_masuk','tanggal_kadaluarsa','jumlah_stock'));
+			$datapost = get_post_data(array('id','nama_obat','kode_obat','jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual'));
 			$this->m_stock_obat->insertData($datapost);
 			$this->fungsi->run_js('load_silent("data/stock_obat","#content")');
 			$this->fungsi->message_box("Data Stock Obat sukses disimpan...","success");
@@ -85,7 +85,7 @@ class stock_obat extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_obat','kode_obat','tanggal_masuk','tanggal_kadaluarsa','jumlah_stock'));
+			$datapost = get_post_data(array('id','nama_obat','kode_obat','jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual'));
 			$this->m_stock_obat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("data/stock_obat","#content")');
 			$this->fungsi->message_box("Data Stock Obat sukses disimpan...","success");
