@@ -38,7 +38,7 @@
             <td align="center"><?=$row->nama_obat?></td>
             <td align="center"><?=$row->kode_obat?></td>
             <td align="center"><?=$row->jenis_obat?></td>
-            <td align="center"><?=$row->tanggal_kadaluwarsa?></td>
+            <td align="center"><?=date('j F Y',strtotime($row->tanggal_kadaluwarsa))?></td>
             <td align="center"><?=$row->jumlah_stock?></td>
             <td align="left">Rp. <?=number_format($row->harga_jual)?></td>
             <td align="center">

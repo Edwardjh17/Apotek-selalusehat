@@ -8,12 +8,13 @@ class Data_penjualan extends CI_Controller {
 		parent::__construct();
 		$this->fungsi->restrict();
 		$this->load->model('data/m_data_penjualan');
+		$this->load->model('data/m_stock_obat');
 	}
 
 	public function index()
 	{
 		$this->fungsi->check_previleges('data_penjualan');
-		$data['data_penjualan'] = $this->m_data_penjualan->getData();
+		$data['data_penjualan'] = $this->m_data_penjualan->join();
 		$this->load->view('penjualan/data_penjualan/v_data_penjualan_list',$data);
 	}
 
@@ -49,11 +50,13 @@ class Data_penjualan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['status']='';
+			$data['id_obat'] = get_options($this->db->query('select id, nama_obat from stock_obat'),true);
+			$data['harga_jual'] = get_options($this->db->query('select id, harga_jual from stock_obat'),true);
 			$this->load->view('penjualan/data_penjualan/v_data_penjualan_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('tanggal_transaksi','no_referensi','nama_obat','harga_jual','nama_pembeli','banyak','total_penjualan'));
+			$datapost = get_post_data(array('tanggal_transaksi','no_referensi','id_obat','harga_jual','nama_pembeli','banyak','total_penjualan'));
 			$this->m_data_penjualan->insertData($datapost);
 			$this->fungsi->run_js('load_silent("penjualan/data_penjualan","#content")');
 			$this->fungsi->message_box("Data Penjualan sukses disimpan...","success");
@@ -83,12 +86,14 @@ class Data_penjualan extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['edit'] = $this->db->get_where('data_penjualan',array('id'=>$id));
+			$data['id_obat'] = get_options($this->db->query('select id, nama_obat from stock_obat'),true);
+			$data['harga_jual'] = get_options($this->db->query('select id, harga_jual from stock_obat'),true);
 			$data['status']='';
 			$this->load->view('penjualan/data_penjualan/v_data_penjualan_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','tanggal_transaksi','no_referensi','nama_obat','harga_jual','nama_pembeli','banyak','total_penjualan'));
+			$datapost = get_post_data(array('id','tanggal_transaksi','no_referensi','id_obat','harga_jual','nama_pembeli','banyak','total_penjualan'));
 			$this->m_data_penjualan->updateData($datapost);
 			$this->fungsi->run_js('load_silent("penjualan/data_penjualan","#content")');
 			$this->fungsi->message_box("Data Penjualan sukses diperbarui...","success");

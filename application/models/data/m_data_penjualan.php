@@ -28,6 +28,14 @@ public function getData($value='')
 		$this->db->where('id', $id);
         $this->db->delete('data_penjualan');
 	}
+	public function join()
+	{
+        $this->db->select('data_penjualan.*, stock_obat.nama_obat, stock_obat.harga_jual');
+		$this->db->from('data_penjualan');
+		$this->db->join('stock_obat', 'stock_obat.id = data_penjualan.id_obat');
+
+		return $this->db->get();
+	}
 
 }
 

@@ -9,6 +9,8 @@ class obat_kadaluwarsa extends CI_Controller {
 		$this->fungsi->restrict();
 		$this->load->model('data/m_stock_obat');
 		$this->load->model('data/m_jenis_obat');
+		//$this->load->model('data/m_jenis_obat');
+
 	}
 
 	public function index()
@@ -17,7 +19,6 @@ class obat_kadaluwarsa extends CI_Controller {
         $data['table_exp'] = $this->m_stock_obat->expired();
         $data['table_alex'] = $this->m_stock_obat->almostex();
 		$data['nullex'] = $this->m_stock_obat->countex();
-		$data['jenis_obat'] = $this->m_jenis_obat->getData();
 		$this->load->view('obat/obat_kadaluwarsa/obat_kadaluwarsa_list',$data);
     }
 }

@@ -22,19 +22,19 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-4 control-label">Nama Obat</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'nama_obat','value'=>$row->nama_obat,'class'=>'form-control'));?>
-            <?php echo form_error('nama_obat');?>
+                <label class="col-sm-4 control-label">Nama Obat</label>
+                <div class="col-sm-8">
+                  <?php echo form_dropdown('id_obat',$id_obat,$row->id_obat,'id="id_obat" class="form-control select2"');?>
+                  <?php echo form_error('id_obat', '<span class="error-span">', '</span>'); ?>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-4 control-label">Harga Jual</label>
-            <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'harga_jual','value'=>$row->harga_jual,'class'=>'form-control'));?>
-            <?php echo form_error('harga_jual');?>
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Harga Jual</label>
+                <div class="col-sm-8">
+                  <?php echo form_dropdown('harga_jual',$harga_jual,$row->harga_jual,'id="harga_jual" class="form-control select2"');?>
+                  <?php echo form_error('harga_jual', '<span class="error-span">', '</span>'); ?>
+                </div>
             </div>
-        </div>
         <div class="form-group">
             <label class="col-sm-4 control-label">Nama Pembeli</label>
             <div class="col-sm-8">

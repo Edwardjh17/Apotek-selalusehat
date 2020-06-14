@@ -36,7 +36,7 @@
           foreach($data_penjualan->result() as $row): ?>
           <tr>
             <td align="center"><?=$i++?></td>
-            <td align="center"><?=$row->tanggal_transaksi?></td>
+            <td align="center"><?=date('j F Y',strtotime($row->tanggal_transaksi))?></td>
             <td align="center"><?=$row->no_referensi?></td>
             <td align="center"><?=$row->nama_obat?></td>
             <td align="left">Rp. <?=number_format($row->harga_jual)?></td>

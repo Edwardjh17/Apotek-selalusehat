@@ -131,9 +131,10 @@
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 1.0.0
-        </div>
         <strong>Copyright &copy; 2020 SELALU SEHAT.</strong>
+        </div>
+        <b>Version</b> 1.1.0
+        
       </footer>
 
       <!-- Control Sidebar -->
