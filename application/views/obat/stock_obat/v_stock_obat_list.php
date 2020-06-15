@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2'|| $sesi == '3' || $sesi == '4') {
+              if ($sesi == '1' ||$sesi == '4') {
                 echo button('load_silent("obat/stock_obat/form/base","#modal")','Tambah Stock Obat','btn btn-success','data-toggle="tooltip" title="Tambah Data Stock"');
               } else {
                 # code...

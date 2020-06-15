@@ -109,7 +109,13 @@ class Data_penjualan extends CI_Controller {
 		$this->fungsi->message_box("Data Penjualan berhasil dihapus...","notice");
 		$this->fungsi->catat("Menghapus laporan dengan id ".$id);
 	}
-
+	public function view_print($id='')
+	{
+		//$this->fungsi->check_previleges('data_penjualan');
+		$data['id'] = $this->m_data_penjualan->join();
+		$this->load->view('penjualan/data_penjualan/v_data_penjualan_print',$data);
+	}
+	
 }
 
 /* End of file data_penjualan.php */

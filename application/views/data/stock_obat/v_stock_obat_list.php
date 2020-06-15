@@ -68,6 +68,7 @@
        </div>
      </div>
    </div>
+   <a href="<?= site_url('penjualan/data_penjualan_print/') ?>" class="btn btn-danger" ><i class="fa fw fa-print"></i></a>
 <script type="text/javascript">
  $(document).ready(function() {
    var table = $('#tableku').DataTable( {

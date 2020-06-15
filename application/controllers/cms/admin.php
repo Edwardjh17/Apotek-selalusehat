@@ -31,6 +31,15 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('header');
 	}
+	public function printme()
+	{
+		
+		$this->fungsi->check_previleges('semua');
+		$this->load->model('cms/m_menu');
+		$data['menu'] = $this->m_menu->get_menu(from_session('level'));
+		// $data['level'] = $this->m_manage->get_level();
+		$this->load->view('cms/weel_print',$data);
+	}
 
 }
 

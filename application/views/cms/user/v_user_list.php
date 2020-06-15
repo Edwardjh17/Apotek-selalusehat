@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2'|| $sesi == '3' ) {
+              if ($sesi == '1' ||  $sesi == '3' ) {
                 echo button('load_silent("data/pegawai/show_addForm/","#content")','Tambah Pegawai','btn btn-success','data-toggle="tooltip" title="Tambah Pegawai"');
               } else {
                 # code...

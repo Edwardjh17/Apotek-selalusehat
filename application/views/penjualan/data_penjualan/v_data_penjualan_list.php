@@ -9,7 +9,7 @@
             <div class="box-tools pull-right">
             <?php
               $sesi = from_session('level');
-              if ($sesi == '1' || $sesi == '2'|| $sesi == '5' ) {
+              if ($sesi == '1' ||  $sesi == '5' ) {
                 echo button('load_silent("penjualan/data_penjualan/form/base","#modal")','Tambah Penjualan','btn btn-success');
               } else {
                 # code...
@@ -52,6 +52,7 @@
                 # code...
               }
               ?>
+              <a href="<?= site_url('penjualan/data_penjualan/view_print/'.$row->id) ?>" class="btn btn-warning" ><i class="fa fw fa-print"></i></a>
               <?php
               $sesi = from_session('level');
               if ($sesi == '1'|| $sesi == '2' || $sesi == '3' || $sesi == '5'  ) {
@@ -67,6 +68,7 @@
         </tbody>
         </table>
       </div>
+
     </div>
   <div>
 </div>
