@@ -16,6 +16,7 @@ class stock_obat extends CI_Controller {
 	{
 		$this->fungsi->check_previleges('stock_obat');
 		$data['stock_obat'] = $this->m_stock_obat->getData();
+		$data['jenis_obat'] = $this->m_jenis_obat->getData();
 		$this->load->view('data/stock_obat/v_stock_obat_list',$data);
 	}
 	public function form($param='')
@@ -48,17 +49,20 @@ class stock_obat extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
+			//$data['stock_obat'] = $this->m_stock_obat->getData();
 			$data['suplier'] = $this->m_suplier->getData();
 			$data['jenis_obat'] = $this->m_jenis_obat->getData();
+			$data['status']='';
 			$this->load->view('data/stock_obat/v_stock_obat_add',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_obat','kode_obat','jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual','suplier'));
-			$this->m_stock_obat->insertData($datapost);
-			$this->fungsi->run_js('load_silent("data/stock_obat","#content")');
-			$this->fungsi->message_box("Data Stock Obat sukses disimpan...","success");
-			$this->fungsi->catat($datapost,"Menambah data stock_obat dengan data sbb:",true);
+			$datapost = get_post_data(array('id','nama_obat','kode_obat','id_jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual','id_suplier'));
+			var_dump($datapost);
+			//$this->m_stock_obat->insertData($datapost);
+			//$this->fungsi->run_js('load_silent("data/stock_obat","#content")');
+			//$this->fungsi->message_box("Data Stock Obat sukses disimpan...","success");
+			//$this->fungsi->catat($datapost,"Menambah data stock_obat dengan data sbb:",true);
 		}
 	}
 	public function show_editForm($id='')
@@ -83,6 +87,8 @@ class stock_obat extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['edit'] = $this->db->get_where('stock_obat',array('id'=>$id));
+			$data['jenis_obat'] = $this->m_jenis_obat->getData();
+			$data['stock_obat'] = $this->m_stock_obat->getData();
 			$data['status']='';
 			$this->load->view('data/stock_obat/v_stock_obat_edit',$data);
 		}

@@ -55,7 +55,7 @@ class stock_obat extends CI_Controller {
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_obat','kode_obat','jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual','suplier'));
+			$datapost = get_post_data(array('id','nama_obat','kode_obat','id_jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual','id_suplier'));
 			$this->m_stock_obat->insertData($datapost);
 			$this->fungsi->run_js('load_silent("obat/stock_obat","#content")');
 			$this->fungsi->message_box("Data Stock Obat sukses disimpan...","success");
@@ -84,12 +84,13 @@ class stock_obat extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['edit'] = $this->db->get_where('stock_obat',array('id'=>$id));
+			$data['jenis_obat'] = $this->m_jenis_obat->getData();
 			$data['status']='';
 			$this->load->view('obat/stock_obat/v_stock_obat_edit',$data);
 		}
 		else
 		{
-			$datapost = get_post_data(array('id','nama_obat','kode_obat','jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual','suplier'));
+			$datapost = get_post_data(array('id','nama_obat','kode_obat','id_jenis_obat','tanggal_masuk','tanggal_kadaluwarsa','jumlah_stock','harga_beli','harga_jual','id_suplier'));
 			$this->m_stock_obat->updateData($datapost);
 			$this->fungsi->run_js('load_silent("obat/stock_obat","#content")');
 			$this->fungsi->message_box("Data Stock Obat sukses disimpan...","success");

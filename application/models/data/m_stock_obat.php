@@ -5,10 +5,10 @@ class M_stock_obat extends CI_Model {
 
 	public function getData($value='')
 	{
-		$this->db->join('jenis_obat jo', 'so.id_jenis_obat = jo.id', 'left');
-		$this->db->select('so.*,jo.jenis_obat');
-		
-		return $this->db->get('stock_obat so');
+		$this->db->select('stock_obat.*,jenis_obat.jenis_obat');
+		$this->db->from('stock_obat');
+		$this->db->join('jenis_obat', 'jenis_obat.id = stock_obat.id_jenis_obat');
+		return $this->db->get();
 	}
 
 	public function insertData($data='')
@@ -63,6 +63,17 @@ class M_stock_obat extends CI_Model {
         $nullstock = $cs->num_rows();
         return $nullstock;    
 	}
+	public function join()
+	{
+		$this->db->select('kelola_bahan.*,master_bahan.nama_bahan, master_satuan.nama_satuan, dana.sumber_pendanaan, status.status, penyimpanan_bahan.nama_penyimpanan');
+		$this->db->from('kelola_bahan');
+		$this->db->join('master_bahan', 'master_bahan.id = kelola_bahan.nama_bahan');
+		$this->db->join('master_satuan', 'master_satuan.id = kelola_bahan.satuan');
+		$this->db->join('dana', 'dana.id_pendanaan = kelola_bahan.pendanaan');
+		$this->db->join('status', 'status.id = kelola_bahan.status');
+		$this->db->join('penyimpanan_bahan', 'penyimpanan_bahan.id = kelola_bahan.lokasi');
+		return $this->db->get();
+}
 	public function getList()
     {
         $this->db->from('cms_user')->get();

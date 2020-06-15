@@ -21,19 +21,26 @@
             <?php echo form_error('kode_obat');?>
             </div>
         </div>
+        
         <div class="form-group">
             <label class="col-sm-4 control-label">Jenis Obat</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'jenis_obat','value'=>$row->jenis_obat,'class'=>'form-control'));?>
-            <?php echo form_error('jenis_obat');?>
+                <select class="form-control" name="id_jenis_obat">
+                <?php foreach ($jenis_obat->result() as $jenis_obat): ?>
+                    <option value="<?= $jenis_obat->id ?>" <?= $jenis_obat->id == $row->id_jenis_obat ? "selected" : null ?>><?= $jenis_obat->jenis_obat ?></option>
+                <?php endforeach; ?>
+                </select>
+            <?php echo form_error('id_jenis_obat');?>
+            <span id="check_data"></span>
             </div>
+
         </div>
+    
         <div class="form-group">
             <label class="col-sm-4 control-label">Tanggal Kadaluwarsa</label>
             <div class="col-sm-8">
-            <?php echo form_input(array('name'=>'tanggal_kadaluwarsa','type'=>'date','class'=>'form-control'));?>
+            <?php echo form_input(array('name'=>'tanggal_kadaluwarsa','value'=>$row->tanggal_kadaluwarsa,'type'=>'date','class'=>'form-control'));?>
             <?php echo form_error('tanggal_kadaluwarsa');?>
-            <span id="check_data"></span>
             </div>
         </div>
         <div class="form-group">
